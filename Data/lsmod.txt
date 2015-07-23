@@ -1,0 +1,108 @@
+Module                  Size  Used by
+nls_utf8               12456  1 
+nls_cp437              16553  1 
+vfat                   17135  1 
+fat                    61986  1 vfat
+usb_storage            56215  1 
+cfg80211              405538  0 
+nfsd                  263032  2 
+auth_rpcgss            51211  1 nfsd
+oid_registry           12419  1 auth_rpcgss
+nfs_acl                12511  1 nfsd
+nfs                   188136  0 
+lockd                  83389  2 nfs,nfsd
+fscache                45542  1 nfs
+sunrpc                237402  6 nfs,nfsd,auth_rpcgss,lockd,nfs_acl
+amd_freq_sensitivity    12452  0 
+kvm_amd                59091  0 
+kvm                   388635  1 kvm_amd
+uvcvideo               79005  0 
+crc32_pclmul           12915  0 
+videobuf2_vmalloc      12816  1 uvcvideo
+videobuf2_memops       12519  1 videobuf2_vmalloc
+ghash_clmulni_intel    12978  0 
+videobuf2_core         47787  1 uvcvideo
+v4l2_common            12995  1 videobuf2_core
+videodev              126451  3 uvcvideo,v4l2_common,videobuf2_core
+media                  18305  2 uvcvideo,videodev
+aesni_intel           151423  0 
+aes_x86_64             16719  1 aesni_intel
+lrw                    12757  1 aesni_intel
+gf128mul               12970  1 lrw
+glue_helper            12695  1 aesni_intel
+snd_hda_codec_realtek    67127  1 
+radeon               1345162  0 
+ablk_helper            12572  1 aesni_intel
+eeepc_wmi              12600  0 
+asus_wmi               22781  1 eeepc_wmi
+sparse_keymap          12818  1 asus_wmi
+rfkill                 18867  2 cfg80211,asus_wmi
+snd_hda_codec_hdmi     45118  1 
+snd_hda_codec_generic    63181  1 snd_hda_codec_realtek
+video                  18096  1 asus_wmi
+cryptd                 14516  3 ghash_clmulni_intel,aesni_intel,ablk_helper
+pcspkr                 12595  0 
+snd_hda_intel          26327  7 
+ttm                    77862  1 radeon
+evdev                  17445  16 
+drm_kms_helper         49210  1 radeon
+serio_raw              12849  0 
+fam15h_power           12684  0 
+snd_hda_controller     26646  1 snd_hda_intel
+drm                   249955  3 ttm,drm_kms_helper,radeon
+snd_hda_codec         104463  5 snd_hda_codec_realtek,snd_hda_codec_hdmi,snd_hda_codec_generic,snd_hda_intel,snd_hda_controller
+k10temp                12618  0 
+edac_mce_amd           21166  0 
+i2c_algo_bit           12751  1 radeon
+i2c_piix4              20864  0 
+snd_hwdep              13148  1 snd_hda_codec
+snd_pcm                88662  4 snd_hda_codec_hdmi,snd_hda_codec,snd_hda_intel,snd_hda_controller
+edac_core              51465  0 
+i2c_core               46012  7 drm,i2c_piix4,drm_kms_helper,i2c_algo_bit,v4l2_common,radeon,videodev
+wmi                    17339  1 asus_wmi
+shpchp                 31121  0 
+snd_timer              26614  1 snd_pcm
+snd                    65244  22 snd_hda_codec_realtek,snd_hwdep,snd_timer,snd_hda_codec_hdmi,snd_pcm,snd_hda_codec_generic,snd_hda_codec,snd_hda_intel
+soundcore              13026  2 snd,snd_hda_codec
+tpm_infineon           16844  0 
+tpm_tis                17231  0 
+tpm                    31511  2 tpm_tis,tpm_infineon
+button                 12944  0 
+acpi_cpufreq           17218  0 
+processor              28221  5 acpi_cpufreq
+thermal_sys            27642  2 video,processor
+fuse                   83350  1 
+parport_pc             26300  1 
+ppdev                  16782  0 
+lp                     17074  0 
+parport                35749  3 lp,ppdev,parport_pc
+autofs4                35529  2 
+ext4                  473802  2 
+crc16                  12343  1 ext4
+mbcache                17171  1 ext4
+jbd2                   82413  1 ext4
+hid_generic            12393  0 
+usbhid                 44460  0 
+hid                   102264  2 hid_generic,usbhid
+sg                     29973  0 
+sd_mod                 44356  6 
+sr_mod                 21903  0 
+crc_t10dif             12431  1 sd_mod
+cdrom                  47424  1 sr_mod
+crct10dif_generic      12581  0 
+ohci_pci               12808  0 
+crct10dif_pclmul       13387  1 
+crct10dif_common       12356  3 crct10dif_pclmul,crct10dif_generic,crc_t10dif
+crc32c_intel           21809  0 
+ahci                   33291  3 
+libahci                27158  1 ahci
+ehci_pci               12512  0 
+ohci_hcd               42982  1 ohci_pci
+xhci_hcd              148881  0 
+ehci_hcd               69837  1 ehci_pci
+libata                177457  2 ahci,libahci
+scsi_mod              191405  5 sg,usb_storage,libata,sd_mod,sr_mod
+usbcore               195340  8 uvcvideo,usb_storage,ohci_hcd,ohci_pci,ehci_hcd,ehci_pci,usbhid,xhci_hcd
+r8169                  68262  0 
+usb_common             12440  1 usbcore
+mii                    12675  1 r8169
