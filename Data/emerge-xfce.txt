@@ -1,0 +1,540 @@
+Searching...      
+[ Results for search key : xfce ]
+[ Applications found : 67 ]
+
+*  dev-util/xfce4-dev-tools
+      Latest version available: 4.12.0
+      Latest version installed: 4.12.0
+      Size of files: 302 kB
+      Homepage:      http://www.xfce.org/ http://foo-projects.org/~benny/projects/xfce4-dev-tools/
+      Description:   A set of scripts and m4/autoconf macros that ease build system maintenance
+      License:       GPL-2
+
+*  x11-terms/xfce4-terminal
+      Latest version available: 0.6.3
+      Latest version installed: 0.6.3
+      Size of files: 796 kB
+      Homepage:      http://www.xfce.org/projects/terminal/
+      Description:   A terminal emulator for the Xfce desktop environment
+      License:       GPL-2
+
+*  x11-themes/elementary-xfce-icon-theme
+      Latest version available: 0.4_p20150327
+      Latest version installed: [ Not Installed ]
+      Size of files: 7,293 kB
+      Homepage:      http://github.com/shimmerproject/elementary-xfce
+      Description:   Elementary icons forked from upstream, extended and maintained for Xfce
+      License:       public-domain GPL-1 GPL-2 GPL-3
+
+*  x11-themes/gtk-engines-xfce
+      Latest version available: 3.2.0-r300
+      Latest version installed: 3.2.0-r200
+      Size of files: 367 kB
+      Homepage:      http://www.xfce.org/projects/
+      Description:   A port of Xfce engine to GTK+ 3.x
+      License:       GPL-2
+
+*  x11-themes/xfce-gant-icon-theme
+      Latest version available: 3.9_p6
+      Latest version installed: [ Not Installed ]
+      Size of files: 31,242 kB
+      Homepage:      http://www.xfce-look.org/content/show.php/GANT?content=23297
+      Description:   Xfce Gant Icon Theme
+      License:       public-domain
+
+*  xfce-base/libxfce4ui
+      Latest version available: 4.12.1
+      Latest version installed: 4.12.1
+      Size of files: 650 kB
+      Homepage:      http://www.xfce.org/projects/libxfce4
+      Description:   Unified widgets and session management libraries for the Xfce desktop environment
+      License:       LGPL-2
+
+*  xfce-base/libxfce4util
+      Latest version available: 4.12.1-r1
+      Latest version installed: 4.12.1-r1
+      Size of files: 444 kB
+      Homepage:      http://www.xfce.org/projects/
+      Description:   A basic utility library for the Xfce desktop environment
+      License:       LGPL-2
+
+*  xfce-base/libxfcegui4
+      Latest version available: 4.10.0-r1
+      Latest version installed: [ Not Installed ]
+      Size of files: 674 kB
+      Homepage:      http://wiki.gentoo.org/wiki/No_homepage http://git.xfce.org/archive/libxfcegui4/
+      Description:   A compability library for unported Xfce 4.6 plugins (DEPRECATED)
+      License:       GPL-2 LGPL-2.1
+
+*  xfce-base/xfce4-appfinder
+      Latest version available: 4.12.0-r1
+      Latest version installed: 4.12.0-r1
+      Size of files: 448 kB
+      Homepage:      http://www.xfce.org/projects/
+      Description:   A tool to find and launch installed applications for the Xfce desktop environment
+      License:       GPL-2
+
+*  xfce-base/xfce4-meta
+      Latest version available: 4.10
+      Latest version installed: 4.10
+      Size of files: 0 kB
+      Homepage:      http://www.xfce.org/
+      Description:   The Xfce Desktop Environment (meta package)
+      License:       metapackage
+
+*  xfce-base/xfce4-panel
+      Latest version available: 4.12.0-r1
+      Latest version installed: 4.12.0-r1
+      Size of files: 1,081 kB
+      Homepage:      http://www.xfce.org/projects/
+      Description:   Panel for the Xfce desktop environment
+      License:       GPL-2 LGPL-2.1
+
+*  xfce-base/xfce4-session
+      Latest version available: 4.12.1
+      Latest version installed: 4.12.1
+      Size of files: 1,259 kB
+      Homepage:      http://docs.xfce.org/xfce/xfce4-session/start
+      Description:   A session manager for the Xfce desktop environment
+      License:       GPL-2
+
+*  xfce-base/xfce4-settings
+      Latest version available: 4.12.0
+      Latest version installed: 4.12.0
+      Size of files: 950 kB
+      Homepage:      http://www.xfce.org/projects/
+      Description:   Configuration system for the Xfce desktop environment
+      License:       GPL-2
+
+*  xfce-extra/xfce-theme-manager
+      Latest version available: 0.3.5
+      Latest version installed: [ Not Installed ]
+      Size of files: 204 kB
+      Homepage:      http://keithhedger.hostingsiteforfree.com/pages/apps.html#themeed
+      Description:   An alternative theme manager for The Xfce Desktop Environment
+      License:       GPL-3
+
+*  xfce-extra/xfce4-battery-plugin
+      Latest version available: 1.0.5
+      Latest version installed: [ Not Installed ]
+      Size of files: 394 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-battery-plugin
+      Description:   A battery monitor panel plugin for the Xfce desktop environment
+      License:       GPL-2 LGPL-2
+
+*  xfce-extra/xfce4-cellmodem-plugin
+      Latest version available: 0.0.5
+      Latest version installed: [ Not Installed ]
+      Size of files: 152 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-cellmodem-plugin
+      Description:   A panel plug-in with monitoring support for GPRS/UMTS(3G)/HSDPA(3.5G) modems
+      License:       GPL-2
+
+*  xfce-extra/xfce4-clipman-plugin
+      Latest version available: 1.2.6
+      Latest version installed: [ Not Installed ]
+      Size of files: 428 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-clipman-plugin
+      Description:   A clipboard manager plug-in for the Xfce panel
+      License:       GPL-2
+
+*  xfce-extra/xfce4-composite-editor
+      Latest version available: 0
+      Latest version installed: [ Not Installed ]
+      Size of files: 2 kB
+      Homepage:      http://keithhedger.hostingsiteforfree.com/pages/apps.html#xfcecomp
+      Description:   An graphical interface to modify composite settings
+      License:       GPL-3
+
+*  xfce-extra/xfce4-cpufreq-plugin
+      Latest version available: 1.1.2
+      Latest version installed: [ Not Installed ]
+      Size of files: 368 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-cpufreq-plugin
+      Description:   A panel plugin for showing information about cpufreq settings
+      License:       GPL-2
+
+*  xfce-extra/xfce4-cpugraph-plugin
+      Latest version available: 1.0.5
+      Latest version installed: [ Not Installed ]
+      Size of files: 321 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-cpugraph-plugin
+      Description:   A system load plug-in for the Xfce panel
+      License:       BSD-2 GPL-2
+
+*  xfce-extra/xfce4-datetime-plugin
+      Latest version available: 0.6.2
+      Latest version installed: [ Not Installed ]
+      Size of files: 280 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-datetime-plugin
+      Description:   A panel plug-in with date, time and embedded calender
+      License:       GPL-2
+
+*  xfce-extra/xfce4-dict
+      Latest version available: 0.7.1
+      Latest version installed: [ Not Installed ]
+      Size of files: 482 kB
+      Homepage:      http://goodies.xfce.org/projects/applications/xfce4-dict
+      Description:   A dict.org querying application and panel plug-in for the Xfce desktop
+      License:       GPL-2
+
+*  xfce-extra/xfce4-diskperf-plugin
+      Latest version available: 2.5.5
+      Latest version installed: [ Not Installed ]
+      Size of files: 313 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-diskperf-plugin
+      Description:   A panel plug-in for disk usage and performance statistics
+      License:       BSD-2
+
+*  xfce-extra/xfce4-embed-plugin
+      Latest version available: 1.6.0
+      Latest version installed: [ Not Installed ]
+      Size of files: 339 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-embed-plugin
+      Description:   A plug-in for embedding arbitrary application windows into the Xfce panel
+      License:       GPL-2 LGPL-2
+
+*  xfce-extra/xfce4-equake-plugin
+      Latest version available: 1.3.7
+      Latest version installed: [ Not Installed ]
+      Size of files: 377 kB
+      Homepage:      http://www.e-quake.org/
+      Description:   Panel plug-in that displays information about earthquakes at regular intervals
+      License:       GPL-3
+
+*  xfce-extra/xfce4-eyes-plugin
+      Latest version available: 4.4.4
+      Latest version installed: [ Not Installed ]
+      Size of files: 344 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-eyes-plugin
+      Description:   A panel plug-in which adds classic eyes to your every step
+      License:       GPL-2
+
+*  xfce-extra/xfce4-fsguard-plugin
+      Latest version available: 1.0.2
+      Latest version installed: [ Not Installed ]
+      Size of files: 348 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-fsguard-plugin
+      Description:   A filesystem guard plug-in for the Xfce panel
+      License:       GPL-3
+
+*  xfce-extra/xfce4-genmon-plugin
+      Latest version available: 3.4.0
+      Latest version installed: [ Not Installed ]
+      Size of files: 300 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-genmon-plugin
+      Description:   Cyclically spawns the executable, captures its output and displays the result into the panel
+      License:       LGPL-2.1
+
+*  xfce-extra/xfce4-gvfs-mount
+      Latest version available: 0.0.4
+      Latest version installed: [ Not Installed ]
+      Size of files: 274 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-gvfs-mount
+      Description:   A panel plug-in to mount remote filesystems for the Xfce desktop environment
+      License:       GPL-3
+
+*  xfce-extra/xfce4-hdaps
+      Latest version available: 0.0.9
+      Latest version installed: [ Not Installed ]
+      Size of files: 297 kB
+      Homepage:      http://michael.orlitzky.com/code/xfce4-hdaps.php
+      Description:   A plugin to indicate the status of the IBM Hard Drive Active Protection System
+      License:       GPL-3
+
+*  xfce-extra/xfce4-indicator-plugin
+      Latest version available: 2.3.3-r1
+      Latest version installed: [ Not Installed ]
+      Size of files: 371 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-indicator-plugin
+      Description:   A panel plugin that uses indicator-applet to show new messages
+      License:       GPL-2 LGPL-2
+
+*  xfce-extra/xfce4-kbdleds-plugin
+      Latest version available: 0.0.6
+      Latest version installed: [ Not Installed ]
+      Size of files: 259 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-kbdleds-plugin
+      Description:   A panel plug-in to show state of Caps, Num and Scroll Lock keys
+      License:       GPL-2 LGPL-2
+
+*  xfce-extra/xfce4-linelight-plugin
+      Latest version available: 0.1.7
+      Latest version installed: [ Not Installed ]
+      Size of files: 233 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-linelight-plugin
+      Description:   A simple locate based search plug-in for the Xfce panel
+      License:       GPL-2
+
+*  xfce-extra/xfce4-mailwatch-plugin
+      Latest version available: 1.2.0
+      Latest version installed: [ Not Installed ]
+      Size of files: 497 kB
+      Homepage:      http://spuriousinterrupt.org/projects/xfce4-mailwatch-plugin/
+      Description:   An mail notification panel plug-in for the Xfce desktop environment
+      License:       GPL-2
+
+*  xfce-extra/xfce4-messenger-plugin
+      Latest version available: 0.1.0
+      Latest version installed: [ Not Installed ]
+      Size of files: 396 kB
+      Homepage:      http://packages.qa.debian.org/x/xfce4-messenger-plugin.html
+      Description:   A plugin that listens DBus messages and displays received messages
+      License:       GPL-2
+
+*  xfce-extra/xfce4-mixer
+      Latest version available: 4.11.0
+      Latest version installed: 4.11.0
+      Size of files: 461 kB
+      Homepage:      http://www.xfce.org/projects/xfce4-mixer/
+      Description:   A volume control application (and panel plug-in) for the Xfce desktop environment
+      License:       GPL-2
+
+*  xfce-extra/xfce4-modemlights-plugin
+      Latest version available: 0.1.3.99
+      Latest version installed: [ Not Installed ]
+      Size of files: 153 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-modemlights-plugin
+      Description:   A panel plug-in intended to simplify establishing a ppp connection
+      License:       GPL-2
+
+*  xfce-extra/xfce4-mount-plugin
+      Latest version available: 0.6.7
+      Latest version installed: 0.6.7
+      Size of files: 381 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-mount-plugin
+      Description:   An mount plug-in for the Xfce panel
+      License:       GPL-2
+
+*  xfce-extra/xfce4-mpc-plugin
+      Latest version available: 0.4.5
+      Latest version installed: [ Not Installed ]
+      Size of files: 277 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-mpc-plugin
+      Description:   Music Player Daemon (mpd) panel plugin
+      License:       ISC
+
+*  xfce-extra/xfce4-netload-plugin
+      Latest version available: 1.2.4
+      Latest version installed: [ Not Installed ]
+      Size of files: 353 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-netload-plugin
+      Description:   A network load plug-in for the Xfce panel
+      License:       GPL-2
+
+*  xfce-extra/xfce4-netspeed-plugin
+      Latest version available: 0.3.1
+      Latest version installed: [ Not Installed ]
+      Size of files: 355 kB
+      Homepage:      http://code.google.com/p/xfce4-netspeed-plugin/
+      Description:   A network transfer rate monitoring panel plug-in, inspired by Gnome's Netspeed applet
+      License:       GPL-2
+
+*  xfce-extra/xfce4-notes-plugin
+      Latest version available: 1.8.1
+      Latest version installed: [ Not Installed ]
+      Size of files: 468 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-notes-plugin
+      Description:   Xfce4 panel sticky notes plugin
+      License:       GPL-2
+
+*  xfce-extra/xfce4-notifyd
+      Latest version available: 0.2.4
+      Latest version installed: 0.2.4
+      Size of files: 353 kB
+      Homepage:      http://goodies.xfce.org/projects/applications/xfce4-notifyd
+      Description:   Notification daemon for the Xfce desktop environment
+      License:       GPL-2
+
+*  xfce-extra/xfce4-places-plugin
+      Latest version available: 1.7.0
+      Latest version installed: [ Not Installed ]
+      Size of files: 362 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-places-plugin
+      Description:   A panel plug-in to provide quick access to files, folders and removable media
+      License:       GPL-2
+
+*  xfce-extra/xfce4-playercontrol-plugin
+      Latest version available: 0.3.0
+      Latest version installed: [ Not Installed ]
+      Size of files: 290 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-xmms-plugin
+      Description:   Audacious and MPD panel plugins
+      License:       BSD-2
+
+*  xfce-extra/xfce4-power-manager
+      Latest version available: 1.5.2
+      Latest version installed: [ Not Installed ]
+      Size of files: 1,138 kB
+      Homepage:      http://goodies.xfce.org/projects/applications/xfce4-power-manager
+      Description:   Power manager for the Xfce desktop environment
+      License:       GPL-2
+
+*  xfce-extra/xfce4-pulseaudio-plugin
+      Latest version available: 0.2.3
+      Latest version installed: [ Not Installed ]
+      Size of files: 299 kB
+      Homepage:      https://github.com/andrzej-r/xfce4-pulseaudio-plugin
+      Description:   A panel plug-in for PulseAudio volume control
+      License:       GPL-2
+
+*  xfce-extra/xfce4-quicklauncher-plugin
+      Latest version available: 1.9.4-r1
+      Latest version installed: [ Not Installed ]
+      Size of files: 275 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-quicklauncher-plugin
+      Description:   A quicklauncher plug-in for the Xfce panel
+      License:       GPL-2
+
+*  xfce-extra/xfce4-radio-plugin
+      Latest version available: 0.5.1-r1
+      Latest version installed: [ Not Installed ]
+      Size of files: 134 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-radio-plugin
+      Description:   V4L radio device control plug-in for the Xfce desktop environment
+      License:       GPL-3
+
+*  xfce-extra/xfce4-screenshooter
+      Latest version available: 1.8.2
+      Latest version installed: [ Not Installed ]
+      Size of files: 480 kB
+      Homepage:      http://goodies.xfce.org/projects/applications/xfce4-screenshooter
+      Description:   Xfce4 screenshooter application and panel plugin
+      License:       GPL-2
+
+*  xfce-extra/xfce4-sensors-plugin
+      Latest version available: 1.2.6
+      Latest version installed: [ Not Installed ]
+      Size of files: 443 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-sensors-plugin
+      Description:   A panel plug-in for different sensors using acpi, lm_sensors and hddtemp
+      License:       GPL-2
+
+*  xfce-extra/xfce4-smartbookmark-plugin
+      Latest version available: 0.4.6
+      Latest version installed: [ Not Installed ]
+      Size of files: 274 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-smartbookmark-plugin
+      Description:   Smart bookmark plug-in for the Xfce desktop environment
+      License:       GPL-2
+
+*  xfce-extra/xfce4-soundmenu-plugin
+      Latest version available: 0.7.0
+      Latest version installed: [ Not Installed ]
+      Size of files: 377 kB
+      Homepage:      http://github.com/matiasdelellis/xfce4-soundmenu-plugin
+      Description:   A panel plug-in to control MPRIS2 compatible players like Pragha (from the same authors)
+      License:       GPL-2 LGPL-2
+
+*  xfce-extra/xfce4-systemload-plugin
+      Latest version available: 1.1.2
+      Latest version installed: [ Not Installed ]
+      Size of files: 298 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-systemload-plugin
+      Description:   System load plug-in for Xfce panel
+      License:       BSD-2
+
+*  xfce-extra/xfce4-taskmanager
+      Latest version available: 1.1.0
+      Latest version installed: 1.1.0
+      Size of files: 357 kB
+      Homepage:      http://goodies.xfce.org/projects/applications/xfce4-taskmanager
+      Description:   Task Manager
+      License:       GPL-2
+
+*  xfce-extra/xfce4-time-out-plugin
+      Latest version available: 1.0.2
+      Latest version installed: [ Not Installed ]
+      Size of files: 329 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-time-out-plugin
+      Description:   A panel plug-in to take periodical breaks from the computer
+      License:       GPL-2
+
+*  xfce-extra/xfce4-timer-plugin
+      Latest version available: 1.6.0
+      Latest version installed: [ Not Installed ]
+      Size of files: 318 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-timer-plugin
+      Description:   A simple timer plug-in for the Xfce desktop environment
+      License:       GPL-2
+
+*  xfce-extra/xfce4-vala
+      Latest version available: 4.10.3-r1
+      Latest version installed: [ Not Installed ]
+      Size of files: 85 kB
+      Homepage:      http://wiki.xfce.org/vala-bindings
+      Description:   Vala bindings for the Xfce desktop environment
+      License:       LGPL-2.1
+
+*  xfce-extra/xfce4-verve-plugin
+      Latest version available: 1.1.0
+      Latest version installed: [ Not Installed ]
+      Size of files: 345 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-verve-plugin
+      Description:   A comfortable command line plugin for the Xfce panel
+      License:       GPL-2
+
+*  xfce-extra/xfce4-volumed
+      Latest version available: 0.1.13
+      Latest version installed: 0.1.13
+      Size of files: 86 kB
+      Homepage:      https://launchpad.net/xfce4-volumed
+      Description:   Daemon to control volume up/down and mute keys
+      License:       GPL-3
+
+*  xfce-extra/xfce4-volumed-pulse
+      Latest version available: 0.2.0
+      Latest version installed: [ Not Installed ]
+      Size of files: 275 kB
+      Homepage:      http://launchpad.net/xfce4-volumed-pulse
+      Description:   Daemon to control volume up/down and mute keys for pulseaudio
+      License:       GPL-3
+
+*  xfce-extra/xfce4-wavelan-plugin
+      Latest version available: 0.5.12
+      Latest version installed: [ Not Installed ]
+      Size of files: 295 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-wavelan-plugin
+      Description:   A panel plug-in to display wireless interface statistics
+      License:       BSD-2
+
+*  xfce-extra/xfce4-weather-plugin
+      Latest version available: 0.8.6
+      Latest version installed: [ Not Installed ]
+      Size of files: 2,880 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-weather-plugin
+      Description:   A weather plug-in for the Xfce desktop environment
+      License:       GPL-2
+
+*  xfce-extra/xfce4-whiskermenu-plugin
+      Latest version available: 1.5.0
+      Latest version installed: [ Not Installed ]
+      Size of files: 142 kB
+      Homepage:      http://gottcode.org/xfce4-whiskermenu-plugin/
+      Description:   Alternate application launcher for Xfce
+      License:       GPL-2
+
+*  xfce-extra/xfce4-windowck-plugin
+      Latest version available: 0.2.4
+      Latest version installed: [ Not Installed ]
+      Size of files: 73 kB
+      Homepage:      http://github.com/cedl38/xfce4-windowck-plugin
+      Description:   Xfce panel plugin which allows to put the maximized window title and windows buttons on the panel
+      License:       GPL-3
+
+*  xfce-extra/xfce4-wmdock-plugin
+      Latest version available: 0.6.0
+      Latest version installed: [ Not Installed ]
+      Size of files: 336 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-wmdock-plugin
+      Description:   a compatibility layer for running WindowMaker dockapps on Xfce4
+      License:       GPL-2
+
+*  xfce-extra/xfce4-xkb-plugin
+      Latest version available: 0.7.1-r1
+      Latest version installed: 0.7.1-r1
+      Size of files: 818 kB
+      Homepage:      http://goodies.xfce.org/projects/panel-plugins/xfce4-xkb-plugin
+      Description:   XKB layout switching panel plug-in for the Xfce desktop environment
+      License:       BSD-2 GPL-2+
+

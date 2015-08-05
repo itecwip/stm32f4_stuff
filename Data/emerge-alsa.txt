@@ -1,0 +1,172 @@
+Searching...      
+[ Results for search key : alsa ]
+[ Applications found : 21 ]
+
+*  dev-haskell/alsa-core
+      Latest version available: 0.5.0.1-r2
+      Latest version installed: [ Not Installed ]
+      Size of files: 2 kB
+      Homepage:      http://www.haskell.org/haskellwiki/ALSA
+      Description:   Binding to the ALSA Library API (Exceptions)
+      License:       BSD
+
+*  dev-haskell/alsa-mixer
+      Latest version available: 0.2.0.2
+      Latest version installed: [ Not Installed ]
+      Size of files: 7 kB
+      Homepage:      https://github.com/ttuegel/alsa-mixer
+      Description:   Bindings to the ALSA simple mixer API
+      License:       BSD
+
+*  dev-python/pyalsa
+      Latest version available: 1.0.29
+      Latest version installed: 1.0.29
+      Size of files: 38 kB
+      Homepage:      http://alsa-project.org/
+      Description:   Python bindings for ALSA library
+      License:       GPL-2
+
+*  dev-python/pyalsaaudio
+      Latest version available: 0.7-r1000
+      Latest version installed: [ Not Installed ]
+      Size of files: 121 kB
+      Homepage:      http://sourceforge.net/projects/pyalsaaudio/ https://pypi.python.org/pypi/pyalsaaudio
+      Description:   ALSA bindings
+      License:       PSF-2
+
+*  mail-client/balsa
+      Latest version available: 2.5.2
+      Latest version installed: [ Not Installed ]
+      Size of files: 3,954 kB
+      Homepage:      http://pawsa.fedorapeople.org/balsa/
+      Description:   Email client for GNOME
+      License:       GPL-2
+
+*  media-libs/alsa-lib
+      Latest version available: 1.0.29
+      Latest version installed: 1.0.29
+      Size of files: 884 kB
+      Homepage:      http://www.alsa-project.org/
+      Description:   Advanced Linux Sound Architecture Library
+      License:       LGPL-2.1
+
+*  media-libs/alsa-oss
+      Latest version available: 1.0.28
+      Latest version installed: [ Not Installed ]
+      Size of files: 284 kB
+      Homepage:      http://www.alsa-project.org/
+      Description:   Advanced Linux Sound Architecture OSS compatibility layer
+      License:       GPL-2
+
+*  media-libs/libclalsadrv
+      Latest version available: 2.0.0
+      Latest version installed: [ Not Installed ]
+      Size of files: 14 kB
+      Homepage:      http://packages.debian.org/libclalsadrv
+      Description:   ALSA driver C++ access library
+      License:       GPL-2
+
+*  media-libs/zita-alsa-pcmi
+      Latest version available: 0.2.0
+      Latest version installed: [ Not Installed ]
+      Size of files: 20 kB
+      Homepage:      http://kokkinizita.linuxaudio.org/linuxaudio/
+      Description:   Provides easy access to ALSA PCM devices
+      License:       GPL-3
+
+*  media-plugins/alsa-plugins
+      Latest version available: 1.0.29-r1
+      Latest version installed: 1.0.29-r1
+      Size of files: 357 kB
+      Homepage:      http://www.alsa-project.org/
+      Description:   ALSA extra plugins
+      License:       GPL-2 LGPL-2.1
+
+*  media-plugins/alsaequal
+      Latest version available: 0.6-r2
+      Latest version installed: [ Not Installed ]
+      Size of files: 23 kB
+      Homepage:      http://www.thedigitalmachine.net/alsaequal.html
+      Description:   a real-time adjustable equalizer plugin for ALSA
+      License:       LGPL-2.1
+
+*  media-plugins/gst-plugins-alsa
+      Latest version available: 0.10.36-r1
+      Latest version installed: 0.10.36-r1
+      Size of files: 2,308 kB
+      Homepage:      http://gstreamer.freedesktop.org/
+      Description:   plugin for gstreamer
+      License:       GPL-2
+
+*  media-sound/alsa-tools
+      Latest version available: 1.0.29
+      Latest version installed: 1.0.29
+      Size of files: 1,675 kB
+      Homepage:      http://www.alsa-project.org/
+      Description:   Advanced Linux Sound Architecture tools
+      License:       GPL-2
+
+*  media-sound/alsa-utils
+      Latest version available: 1.0.29
+      Latest version installed: 1.0.29
+      Size of files: 1,127 kB
+      Homepage:      http://www.alsa-project.org/
+      Description:   Advanced Linux Sound Architecture Utils (alsactl, alsamixer, etc.)
+      License:       GPL-2
+
+*  media-sound/alsamixer-app
+      Latest version available: 0.1
+      Latest version installed: [ Not Installed ]
+      Size of files: 26 kB
+      Homepage:      http://dockapps.windowmaker.org/file.php/id/253
+      Description:   AlsaMixer.app is a simple mixer dockapp
+      License:       GPL-2
+
+*  media-sound/alsamixergui
+      Latest version available: 0.9.0.1.2-r5
+      Latest version installed: [ Not Installed ]
+      Size of files: 68 kB
+      Homepage:      http://www.gentoo.org/
+      Description:   FLTK based amixer Frontend
+      License:       GPL-2
+
+*  media-sound/alsaplayer
+      Latest version available: 0.99.81
+      Latest version installed: [ Not Installed ]
+      Size of files: 787 kB
+      Homepage:      http://www.alsaplayer.org/
+      Description:   A heavily multi-threaded pluggable audio player
+      License:       GPL-2
+
+*  media-sound/gnome-alsamixer
+      Latest version available: 0.9.6
+      Latest version installed: [ Not Installed ]
+      Size of files: 91 kB
+      Homepage:      http://www.paw.za.org/projects/gnome-alsamixer
+      Description:   Gnome based ALSA Mixer
+      License:       GPL-2
+
+*  sci-electronics/balsa
+      Latest version available: 4.0-r1
+      Latest version installed: [ Not Installed ]
+      Size of files: 3,413 kB
+      Homepage:      http://apt.cs.manchester.ac.uk/projects/tools/balsa/
+      Description:   The Balsa asynchronous synthesis system
+      License:       GPL-2
+
+*  sec-policy/selinux-alsa
+      Latest version available: 2.20141203-r7
+      Latest version installed: [ Not Installed ]
+      Size of files: 953 kB
+      Homepage:      https://wiki.gentoo.org/wiki/Project:SELinux
+      Description:   SELinux policy for alsa
+      License:       GPL-2
+
+*  sys-firmware/alsa-firmware
+      Latest version available: 1.0.29
+      Latest version installed: [ Not Installed ]
+      Size of files: 4,879 kB
+      Homepage:      http://www.alsa-project.org/
+      Description:   Advanced Linux Sound Architecture firmware
+      License:       GPL-2
+
