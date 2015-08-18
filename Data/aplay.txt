@@ -1,0 +1,10 @@
+**** Liste des Périphériques Matériels PLAYBACK ****
+carte 0: Generic [HD-Audio Generic], périphérique 3: HDMI 0 [HDMI 0]
+  Sous-périphériques: 1/1
+  Sous-périphérique #0: subdevice #0
+carte 1: Generic_1 [HD-Audio Generic], périphérique 0: ALC887-VD Analog [ALC887-VD Analog]
+  Sous-périphériques: 1/1
+  Sous-périphérique #0: subdevice #0
+carte 1: Generic_1 [HD-Audio Generic], périphérique 3: ALC887-VD Digital [ALC887-VD Digital]
+  Sous-périphériques: 1/1
+  Sous-périphérique #0: subdevice #0
