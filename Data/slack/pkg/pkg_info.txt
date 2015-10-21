@@ -1,0 +1,84 @@
+fbxkb-0.6-i486-1dj.txz:
+fbxkb is NETWM compliant keyboard indicator and switcher. It shows a flag of current keyboard in a systray area and allows you to switch to another one.
+
+    atk
+    bzip2
+    cairo
+    expat
+    fontconfig
+    freetype
+    gcc
+    gdk-pixbuf2
+    glib2
+    gtk+2
+    harfbuzz
+    icu4c
+    libdrm
+    libffi
+    libICE
+    libpng
+    libSM
+    libX11
+    libXau
+    libxcb
+    libXcomposite
+    libXcursor
+    libXdamage
+    libXdmcp
+    libXext
+    libXfixes
+    libXi
+    libXinerama
+    libXmu
+    libXrandr
+    libXrender
+    libXt
+    libXxf86vm
+    mesa
+    pango
+    pixman
+    udev
+    util-linux
+    zlib
+
+------------
+gnsu-0.2.1-noarch-1gv.txz:
+gnsu allows a permitted user to execute a command with superuser priviliges. gnsu** shows a graphical dialog requesting the user password to allow the execution of the specified command. As gnsu uses sudo as its backend, the password that you need to provide is your user's password, not the root user password.
+
+    pygtk
+    sudo
+
+-----------
+salixtools-1.8.10-noarch-1gv.txz:
+This package includes tools related to system administration that can be used from the linux terminal.
+
+dialog
+
+----------
+salixtools-gtk-1.3.0-noarch-1gv.txz:
+salixtools-gtk includes a set of graphical system administration tools, using the GTK+2 toolkit and written in python.
+
+    pygtk
+    salixtools
+---------
+wicd-1.7.2.4-i486-4.txz
+wicd (network manager for linux)
+
+After installing this package, make sure the /etc/rc.d/rc.wicd
+script is executable; if necessary, do:
+  chmod +x /etc/rc.d/rc.wicd
+
+Results have varied, but you will probably need/want to remove
+any references to interfaces from /etc/rc.d/rc.inet1.conf - in
+other words, make that file look as if netconfig has never been
+run.
+
+When you start X, you should see a wicd icon in the system tray;
+click on it to open the gui interface and configure as desired.
+Your user account will need to be a member of the 'netdev' group 
+in order to use wicd.
+
+Note that urwid will need to be installed if you want to use the 
+curses client.  Also, if you don't have kde installed, you won't 
+have a graphical sudo client available.
+
