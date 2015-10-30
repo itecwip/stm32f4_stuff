@@ -82,3 +82,36 @@ Note that urwid will need to be installed if you want to use the
 curses client.  Also, if you don't have kde installed, you won't 
 have a graphical sudo client available.
 
+-----
+
+xdgmenumaker-0.8-noarch-1_SBo.tgz
+require pyxdg-0.25-i486-1_SBo.tgz
+
+Configuration
+
+The terminal emulator to be used for menu entries that state that an
+application must be launched inside a terminal, can be specified in a
+~/.config/xdgmenumaker.cfg configuration file. Here's an example
+specifying rxvt as the default terminal emulator:
+
+[Terminal]
+terminal = rxvt
+
+
+Usage for Fluxbox
+
+To generate an application menu for fluxbox, run xdgmenumaker like this:
+
+$ xdgmenumaker -f fluxbox > ~/.fluxbox/xdg_menu
+or
+$ xdgmenumaker -i -f fluxbox > ~/.fluxbox/xdg_menu
+(with icon)
+
+and then change your main fluxbox menu to include this file as a submenu. For example, add this somewhere in your ~/.fluxbox/menu file:
+
+[include] (~/.fluxbox/xdg_menu)
+
+You can add the xdgmenumaker command as another item in your menu, if you want to update it, without having to run the command manually again:
+
+[exec] (Update Fluxbox Menu) {xdgmenumaker -f fluxbox > ~/.fluxbox/xdg_menu}
+
