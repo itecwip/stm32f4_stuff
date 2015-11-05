@@ -1,0 +1,66 @@
+00:00.0 Host bridge: AMD [Advanced Micro Devices, Inc.] Family 16h Processor Root Complex
+	Subsystem: ASUSTeK Computer Inc. Device 8623
+00:01.0 VGA compatible controller: AMD/ATI [Advanced Micro Devices, Inc.] Kabini [Radeon HD 8400]
+	Subsystem: ASUSTeK Computer Inc. Device 8623
+00:01.1 Audio device: AMD/ATI [Advanced Micro Devices, Inc.] Device 9840
+	Subsystem: ASUSTeK Computer Inc. Device 8623
+	Kernel driver in use: snd_hda_intel
+	Kernel modules: snd_hda_intel
+00:02.0 Host bridge: AMD [Advanced Micro Devices, Inc.] Family 16h Processor Function 0
+00:02.4 PCI bridge: AMD [Advanced Micro Devices, Inc.] Family 16h Processor Functions 5:1
+	Kernel driver in use: pcieport
+	Kernel modules: shpchp
+00:02.5 PCI bridge: AMD [Advanced Micro Devices, Inc.] Family 16h Processor Functions 5:1
+	Kernel driver in use: pcieport
+	Kernel modules: shpchp
+00:10.0 USB controller: AMD [Advanced Micro Devices, Inc.] FCH USB XHCI Controller (rev 01)
+	Subsystem: ASUSTeK Computer Inc. Device 8623
+	Kernel driver in use: xhci_hcd
+	Kernel modules: xhci_hcd
+00:11.0 SATA controller: AMD [Advanced Micro Devices, Inc.] FCH SATA Controller [AHCI mode] (rev 40)
+	Subsystem: ASUSTeK Computer Inc. Device 8623
+	Kernel driver in use: ahci
+00:12.0 USB controller: AMD [Advanced Micro Devices, Inc.] FCH USB OHCI Controller (rev 39)
+	Subsystem: ASUSTeK Computer Inc. Device 8623
+	Kernel driver in use: ohci_hcd
+	Kernel modules: ohci_hcd
+00:12.2 USB controller: AMD [Advanced Micro Devices, Inc.] FCH USB EHCI Controller (rev 39)
+	Subsystem: ASUSTeK Computer Inc. Device 8623
+	Kernel driver in use: ehci-pci
+	Kernel modules: ehci_pci
+00:13.0 USB controller: AMD [Advanced Micro Devices, Inc.] FCH USB OHCI Controller (rev 39)
+	Subsystem: ASUSTeK Computer Inc. Device 8623
+	Kernel driver in use: ohci_hcd
+	Kernel modules: ohci_hcd
+00:13.2 USB controller: AMD [Advanced Micro Devices, Inc.] FCH USB EHCI Controller (rev 39)
+	Subsystem: ASUSTeK Computer Inc. Device 8623
+	Kernel driver in use: ehci-pci
+	Kernel modules: ehci_pci
+00:14.0 SMBus: AMD [Advanced Micro Devices, Inc.] FCH SMBus Controller (rev 3a)
+	Subsystem: ASUSTeK Computer Inc. Device 8623
+	Kernel driver in use: piix4_smbus
+	Kernel modules: i2c_piix4
+00:14.2 Audio device: AMD [Advanced Micro Devices, Inc.] FCH Azalia Controller (rev 02)
+	Subsystem: ASUSTeK Computer Inc. Device 8576
+	Kernel driver in use: snd_hda_intel
+	Kernel modules: snd_hda_intel
+00:14.3 ISA bridge: AMD [Advanced Micro Devices, Inc.] FCH LPC Bridge (rev 11)
+	Subsystem: ASUSTeK Computer Inc. Device 8623
+00:18.0 Host bridge: AMD [Advanced Micro Devices, Inc.] Family 16h Processor Function 0
+00:18.1 Host bridge: AMD [Advanced Micro Devices, Inc.] Family 16h Processor Function 1
+00:18.2 Host bridge: AMD [Advanced Micro Devices, Inc.] Family 16h Processor Function 2
+00:18.3 Host bridge: AMD [Advanced Micro Devices, Inc.] Family 16h Processor Function 3
+	Kernel driver in use: k10temp
+	Kernel modules: k10temp
+00:18.4 Host bridge: AMD [Advanced Micro Devices, Inc.] Family 16h Processor Function 4
+	Kernel driver in use: fam15h_power
+	Kernel modules: fam15h_power
+00:18.5 Host bridge: AMD [Advanced Micro Devices, Inc.] Family 16h Processor Function 5
+01:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168 PCI Express Gigabit Ethernet controller (rev 11)
+	Subsystem: ASUSTeK Computer Inc. Device 859e
+	Kernel driver in use: r8169
+	Kernel modules: r8169
+02:00.0 USB controller: ASMedia Technology Inc. Device 1142
+	Subsystem: ASUSTeK Computer Inc. Device 85bf
+	Kernel driver in use: xhci_hcd
+	Kernel modules: xhci_hcd
