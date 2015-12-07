@@ -1,0 +1,71 @@
+https://mchck.org/
+
+Quick Specs
+
+Dimensions	50mm x 20mm
+Platform	ARM Cortex-M4 (DSP, no FPU)
+MCU		Freescale MK20DX32VLF5: 8KB RAM, 32KB program flash + 32KB data flash
+Interface	USB, I2C, SPI, UART, I2S
+Programming	via USB bootloader
+Debugging	A second MC HCK can be used as debug adapter
+Board options	mounting hole, LiPo charger, nRF24L01+ directly pluggable, up to 8Mbit flash, LDO, buck regulator, boost regulator, RTC crystal 
+
+https://github.com/mchck/mchck/wiki/Getting-Started
+
+
+Links
+http://bgamari.github.io/posts/getting-started-with-mchck.html
+
+Installation de la toolchain mchck/summon-arm-toolchain
+
+1) installer via sbo la librairie libftdi.
+libftdi-0.20-i486-1_SBo.tgz
+
+2)
+$ git clone https://github.com/esden/summon-arm-toolchain.git
+$ cd summon-arm-toolchain
+$ ./summon-arm-toolchain
+
+3)
+$ cd mkchk/examples/blink
+$ make
+
+Now you have a blink.bin image ready to be uploaded to the mkchk. 
+
+------------------------------------------------------------------------------------------
+
+make du openocd-0.6.1:
+Erreur si pas de librairie libftdi:
+checking Build & Link with libftdi...... configure: error: Cannot build & run test program using libftdi
+-> installer libftdi
+
+Erreur dans libopencm3:
+
+  BUILD   lib/stm32/f7
+Makefile:60: Your toolchain doesn't support -mcpu=cortex-m7.
+Please use gcc-arm-embedded 4.8 2014q3 or newer. Skipping this sub-library.
+  BUILD   lib/stm32/l0
+  CP      libopencm3_stm32l0.ld
+  CC      gpio.c
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-m0plus'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a15 cortex-a5 cortex-a7 cortex-a8 cortex-a9 cortex-m0 cortex-m1 cortex-m3 cortex-m4 cortex-r4 cortex-r4f cortex-r5 ep9312 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xscale
+make[1]: *** [gpio.o] Error 1
+make: *** [lib/stm32/l0] Error 2
+root[summon-arm-toolchain]# 
+
+Modification du Makefile de libopencm3
+
+cd mchck/summon-arm-toolchain/sources
+bzip2 -d libopencm3-2eade079a99c2ea6ccb9c355b66102a9b1452934.tar
+tar xvf libopencm3-2eade079a99c2ea6ccb9c355b66102a9b1452934.tar
+cd libopencm3-2eade079a99c2ea6ccb9c355b66102a9b1452934
+vi Makefile
+-> suppression des targets : stm32/f7, stm32/l0
+-> Suppression des répertoires: lib/stm32/f7 et lib/stm32/l0
+
+-> regeneration du package libopencm3-2eade079a99c2ea6ccb9c355b66102a9b1452934.tar.bz2
+
+tar cvf libopencm3-2eade079a99c2ea6ccb9c355b66102a9b1452934
+bzip2 -z libopencm3-2eade079a99c2ea6ccb9c355b66102a9b1452934.tar
+
+

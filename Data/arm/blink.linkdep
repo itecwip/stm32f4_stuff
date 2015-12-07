@@ -1,0 +1,5 @@
+_syms.blink.o=	blink.o
+_syms.__gnu_lto_v1+=	${_syms.blink.o}
+_syms.main+=	${_syms.blink.o}
+_syms.blink.o+=	$${_syms.onboard_led} $${_syms.sys_yield_for_frogs} $${_syms.timeout_add} $${_syms.timeout_init}
+_syms_files+=	_syms.blink.o

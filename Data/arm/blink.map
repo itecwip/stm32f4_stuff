@@ -1,0 +1,243 @@
+Archive member included because of file (symbol)
+
+/home/nicolas/dev/sat/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/thumb/cortex-m4/libg.a(lib_a-memset.o)
+                              /tmp/ccjE77y2.ltrans0.ltrans.o (memset)
+
+Discarded input sections
+
+ .text          0x00000000        0x0 /tmp/ccjE77y2.ltrans0.ltrans.o
+ .data          0x00000000        0x0 /tmp/ccjE77y2.ltrans0.ltrans.o
+ .bss           0x00000000        0x0 /tmp/ccjE77y2.ltrans0.ltrans.o
+ .data          0x00000000        0x0 /home/nicolas/dev/sat/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/thumb/cortex-m4/libg.a(lib_a-memset.o)
+ .bss           0x00000000        0x0 /home/nicolas/dev/sat/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/thumb/cortex-m4/libg.a(lib_a-memset.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+loader_rom       0x00000000         0x00100000         xr
+app_rom          0x00000c00         0x00100000         xr
+ram              0x1ffff000         0x00002000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x00000c00                _app_rom = ORIGIN (app_rom)
+                0x20001000                _eram = (ORIGIN (ram) + 0x2000)
+                0x00000400                FTFL_CONFIG = 0x400
+                0x14000000                FlexRAM = 0x14000000
+                0x40020000                FTFL = 0x40020000
+                0x4002c000                SPI0 = 0x4002c000
+                0x40032000                CRC = 0x40032000
+                0x40037000                PIT = 0x40037000
+                0x40038000                FTM0 = 0x40038000
+                0x40039000                FTM1 = 0x40039000
+                0x4003b000                ADC0 = 0x4003b000
+                0x4003d000                RTC = 0x4003d000
+                0x4003e000                VBAT = 0x4003e000
+                0x40040000                LPTMR0 = 0x40040000
+                0x40045000                TSI0 = 0x40045000
+                0x40047000                SIM = 0x40047000
+                0x40049000                PORTA = 0x40049000
+                0x4004a000                PORTB = 0x4004a000
+                0x4004b000                PORTC = 0x4004b000
+                0x4004c000                PORTD = 0x4004c000
+                0x4004d000                PORTE = 0x4004d000
+                0x40064000                MCG = 0x40064000
+                0x40066000                I2C0 = 0x40066000
+                0x4006a000                UART0 = 0x4006a000
+                0x4006b000                UART1 = 0x4006b000
+                0x4006c080                UART2 = 0x4006c080
+                0x40072000                USB0 = 0x40072000
+                0x40073000                CMP0 = 0x40073000
+                0x40073008                CMP1 = 0x40073008
+                0x40074000                VREF = 0x40074000
+                0x4007c000                LLWU = 0x4007c000
+                0x4007d000                PMC = 0x4007d000
+                0x4007e000                SMC = 0x4007e000
+                0x4007f000                RCM = 0x4007f000
+                0x400ff000                GPIOA = 0x400ff000
+                0x400ff040                GPIOB = 0x400ff040
+                0x400ff080                GPIOC = 0x400ff080
+                0x400ff0c0                GPIOD = 0x400ff0c0
+                0x400ff100                GPIOE = 0x400ff100
+                0xe000e100                NVIC = 0xe000e100
+                0xe000ed00                SCB = 0xe000ed00
+
+.text           0x00000c00      0x4d4
+                0x00000000                . = 0x0
+ *(.isr_vector)
+ .isr_vector    0x00000c00       0xf8 /tmp/ccjE77y2.ltrans0.ltrans.o
+                0x00000c00                isr_vectors
+ /tmp/ccjE77y2.ltrans0.ltrans.o(.text.pin_mode.constprop.5.4116)
+ .text.pin_mode.constprop.5.4116
+                0x00000cf8       0xdc /tmp/ccjE77y2.ltrans0.ltrans.o
+ /tmp/ccjE77y2.ltrans0.ltrans.o(.text.crit_exit.4192)
+ .text.crit_exit.4192
+                0x00000dd4       0x14 /tmp/ccjE77y2.ltrans0.ltrans.o
+ /tmp/ccjE77y2.ltrans0.ltrans.o(.text.timeout_schedule_wrap.5124.4198)
+ .text.timeout_schedule_wrap.5124.4198
+                0x00000de8       0x30 /tmp/ccjE77y2.ltrans0.ltrans.o
+ /tmp/ccjE77y2.ltrans0.ltrans.o(.text.timeout_reschedule.5128.4194)
+ .text.timeout_reschedule.5128.4194
+                0x00000e18       0x48 /tmp/ccjE77y2.ltrans0.ltrans.o
+ /tmp/ccjE77y2.ltrans0.ltrans.o(.text.timeout_empty.5121.4200)
+ .text.timeout_empty.5121.4200
+                0x00000e60        0x2 /tmp/ccjE77y2.ltrans0.ltrans.o
+ /tmp/ccjE77y2.ltrans0.ltrans.o(.text.timeout_update_time.5119.4203)
+ *fill*         0x00000e62        0x2 
+ .text.timeout_update_time.5119.4203
+                0x00000e64       0x24 /tmp/ccjE77y2.ltrans0.ltrans.o
+ /tmp/ccjE77y2.ltrans0.ltrans.o(.text.LPT_Handler.4057)
+ .text.LPT_Handler.4057
+                0x00000e88       0x54 /tmp/ccjE77y2.ltrans0.ltrans.o
+ /tmp/ccjE77y2.ltrans0.ltrans.o(.text.blink.4624.4024)
+ .text.blink.4624.4024
+                0x00000edc       0x94 /tmp/ccjE77y2.ltrans0.ltrans.o
+ /tmp/ccjE77y2.ltrans0.ltrans.o(.text.__Default_Handler.4006.4205)
+ .text.__Default_Handler.4006.4205
+                0x00000f70        0x2 /tmp/ccjE77y2.ltrans0.ltrans.o
+ /tmp/ccjE77y2.ltrans0.ltrans.o(.text.startup.main)
+ *fill*         0x00000f72        0x2 
+ .text.startup.main
+                0x00000f74       0x40 /tmp/ccjE77y2.ltrans0.ltrans.o
+                0x00000f74                main
+ /tmp/ccjE77y2.ltrans0.ltrans.o(.text.Default_Reset_Handler.4027)
+ .text.Default_Reset_Handler.4027
+                0x00000fb4       0x7c /tmp/ccjE77y2.ltrans0.ltrans.o
+ .text          0x00001030       0xa4 /home/nicolas/dev/sat/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/thumb/cortex-m4/libg.a(lib_a-memset.o)
+                0x00001030                memset
+
+.glue_7         0x000010d4        0x0
+ .glue_7        0x00000000        0x0 linker stubs
+
+.glue_7t        0x000010d4        0x0
+ .glue_7t       0x00000000        0x0 linker stubs
+
+.vfp11_veneer   0x000010d4        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x000010d4        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.iplt           0x000010d4        0x0
+ .iplt          0x00000000        0x0 /tmp/ccjE77y2.ltrans0.ltrans.o
+
+.rel.dyn        0x000010d4        0x0
+ .rel.iplt      0x00000000        0x0 /tmp/ccjE77y2.ltrans0.ltrans.o
+
+.pin_hooks      0x000010d4        0x0
+                0x000010d4                pin_hooks_A = .
+ *(SORT(.pin_hooks.PIN_PTA*))
+                0x000010d4                pin_hooks_A_end = .
+                0x000010d4                pin_hooks_B = .
+ *(SORT(.pin_hooks.PIN_PTB*))
+                0x000010d4                pin_hooks_B_end = .
+                0x000010d4                pin_hooks_C = .
+ *(SORT(.pin_hooks.PIN_PTC*))
+                0x000010d4                pin_hooks_C_end = .
+                0x000010d4                pin_hooks_D = .
+ *(SORT(.pin_hooks.PIN_PTD*))
+                0x000010d4                pin_hooks_D_end = .
+ *(.pin_hooks.*)
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x000010d4                . = ALIGN (0x4)
+                0x000010d4                _etext = .
+
+.usb_bdt        0x1ffff000        0x0
+                0x1ffff000                . = ALIGN (0x200)
+                0x1ffff000                _sbss = .
+ *(.usb_bdt)
+
+.bss            0x1ffff000       0x2c
+ *(SORT(.bss*) SORT(COMMON*))
+ .bss.timeout_lazy_now.5214.4261
+                0x1ffff000        0x4 /tmp/ccjE77y2.ltrans0.ltrans.o
+ .bss.t.4633.4266
+                0x1ffff004       0x10 /tmp/ccjE77y2.ltrans0.ltrans.o
+ .bss.overflow.5215.5038
+                0x1ffff014       0x10 /tmp/ccjE77y2.ltrans0.ltrans.o
+ .bss.crit_nest.5805.4262
+                0x1ffff024        0x4 /tmp/ccjE77y2.ltrans0.ltrans.o
+ .bss.timeout_queue.5216.5028
+                0x1ffff028        0x4 /tmp/ccjE77y2.ltrans0.ltrans.o
+                0x1ffff02c                . = ALIGN (0x4)
+                0x1ffff02c                _ebss = .
+                0x000010d4                _sidata = LOADADDR (.data)
+
+.data           0x1ffff02c        0x0 load address 0x000010d4
+                0x1ffff02c                _sdata = .
+ *(SORT(.ramtext.*) SORT(.data*))
+                0x1ffff02c                . = ALIGN (0x4)
+                0x1ffff02c                _edata = .
+
+.igot.plt       0x1ffff02c        0x0
+ .igot.plt      0x00000000        0x0 /tmp/ccjE77y2.ltrans0.ltrans.o
+
+.co_stack       0x1ffff02c      0x404
+                0x1ffff030                . = ALIGN (0x8)
+ *fill*         0x1ffff02c        0x4 
+ *(.co_stack .co_stack.*)
+ .co_stack      0x1ffff030      0x400 /tmp/ccjE77y2.ltrans0.ltrans.o
+                0x1ffff430                . = ALIGN (0x4)
+                0x1ffff430                _end = .
+LOAD /tmp/ccjE77y2.ltrans0.ltrans.o
+START GROUP
+END GROUP
+START GROUP
+LOAD /home/nicolas/dev/sat/bin/../lib/gcc/arm-none-eabi/4.7.3/thumb/cortex-m4/libgcc.a
+LOAD /home/nicolas/dev/sat/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/thumb/cortex-m4/libg.a
+LOAD /home/nicolas/dev/sat/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/thumb/cortex-m4/libc.a
+END GROUP
+OUTPUT(blink.elf elf32-littlearm)
+
+.debug_info     0x00000000     0x39a2
+ .debug_info    0x00000000     0x3886 /tmp/ccjE77y2.ltrans0.ltrans.o
+ .debug_info    0x00003886      0x11c /home/nicolas/dev/sat/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/thumb/cortex-m4/libg.a(lib_a-memset.o)
+
+.debug_abbrev   0x00000000      0x573
+ .debug_abbrev  0x00000000      0x4d4 /tmp/ccjE77y2.ltrans0.ltrans.o
+ .debug_abbrev  0x000004d4       0x9f /home/nicolas/dev/sat/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/thumb/cortex-m4/libg.a(lib_a-memset.o)
+
+.debug_loc      0x00000000      0x330
+ .debug_loc     0x00000000      0x16f /tmp/ccjE77y2.ltrans0.ltrans.o
+ .debug_loc     0x0000016f      0x1c1 /home/nicolas/dev/sat/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/thumb/cortex-m4/libg.a(lib_a-memset.o)
+
+.debug_aranges  0x00000000       0x90
+ .debug_aranges
+                0x00000000       0x70 /tmp/ccjE77y2.ltrans0.ltrans.o
+ .debug_aranges
+                0x00000070       0x20 /home/nicolas/dev/sat/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/thumb/cortex-m4/libg.a(lib_a-memset.o)
+
+.debug_ranges   0x00000000      0x150
+ .debug_ranges  0x00000000      0x150 /tmp/ccjE77y2.ltrans0.ltrans.o
+
+.debug_line     0x00000000      0x5b6
+ .debug_line    0x00000000      0x42a /tmp/ccjE77y2.ltrans0.ltrans.o
+ .debug_line    0x0000042a      0x18c /home/nicolas/dev/sat/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/thumb/cortex-m4/libg.a(lib_a-memset.o)
+
+.debug_str      0x00000000     0x1f80
+ .debug_str     0x00000000     0x1e78 /tmp/ccjE77y2.ltrans0.ltrans.o
+                               0x1ef3 (size before relaxing)
+ .debug_str     0x00001e78      0x108 /home/nicolas/dev/sat/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/thumb/cortex-m4/libg.a(lib_a-memset.o)
+                                0x179 (size before relaxing)
+
+.comment        0x00000000       0x3a
+ .comment       0x00000000       0x3a /tmp/ccjE77y2.ltrans0.ltrans.o
+                                 0x3b (size before relaxing)
+ .comment       0x00000000       0x3b /home/nicolas/dev/sat/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/thumb/cortex-m4/libg.a(lib_a-memset.o)
+
+.ARM.attributes
+                0x00000000       0x33
+ .ARM.attributes
+                0x00000000       0x31 /tmp/ccjE77y2.ltrans0.ltrans.o
+ .ARM.attributes
+                0x00000031       0x33 /home/nicolas/dev/sat/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/thumb/cortex-m4/libg.a(lib_a-memset.o)
+
+.debug_frame    0x00000000      0x11c
+ .debug_frame   0x00000000       0xf0 /tmp/ccjE77y2.ltrans0.ltrans.o
+ .debug_frame   0x000000f0       0x2c /home/nicolas/dev/sat/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/thumb/cortex-m4/libg.a(lib_a-memset.o)

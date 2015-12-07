@@ -1,0 +1,23 @@
+nicolas[dev]$ ll
+total 28
+drwxr-xr-x  6 nicolas users 4096 Dec  6 17:01 .
+drwx--x--x 29 nicolas users 4096 Dec  6 17:02 ..
+drwxr-xr-x  2 nicolas users 4096 Dec  6 17:06 _archives
+drwxr-xr-x  2 nicolas users 4096 Dec  5 16:30 doc
+drwxr-xr-x  6 nicolas users 4096 Dec  5 16:29 mchck
+-rwxr-xr-x  1 nicolas users  139 Dec  6 19:15 mk_app.sh
+drwxr-xr-x  8 nicolas users 4096 Dec  5 19:54 sat
+nicolas[dev]$ ./mk_app.sh 
+rm -f blink.o blink.d mchck-lib-builtins.d mchck-lib-system.d mchck-lib-gpio.d mchck-lib-pin.d mchck-lib-pin_change.d mchck-lib-adc.d mchck-lib-spi.d mchck-lib-sg.d mchck-lib-timeout.d mchck-lib-flash.d mchck-lib-onboard-led.d mchck-lib-stdio.d mchck-lib-printf.d mchck-lib-ftm.d mchck-lib-crc.d mchck-lib-pit.d mchck-lib-uart.d mchck-lib-strtol.d mchck-lib-rtc.d mchck-lib-spiflash.d mchck-lib-i2c.d mchck-lib-i2c_reg.d mchck-lib-adc_queue.d mchck-lib-startup_k20.d usb-lib-usb.d usb-lib-dfu.d usb-lib-dfu-app.d usb-lib-cdc-acm.d usb-lib-hid.d usb-lib-kinetis.d nrf-lib-nrf.d blink.hex blink.elf blink.bin blink.map   mchck-lib-builtins.o mchck-lib-system.o mchck-lib-gpio.o mchck-lib-pin.o mchck-lib-pin_change.o mchck-lib-adc.o mchck-lib-spi.o mchck-lib-sg.o mchck-lib-timeout.o mchck-lib-flash.o mchck-lib-onboard-led.o mchck-lib-stdio.o mchck-lib-printf.o mchck-lib-ftm.o mchck-lib-crc.o mchck-lib-pit.o mchck-lib-uart.o mchck-lib-strtol.o mchck-lib-rtc.o mchck-lib-spiflash.o mchck-lib-i2c.o mchck-lib-i2c_reg.o mchck-lib-adc_queue.o mchck-lib-startup_k20.o usb-lib-usb.o usb-lib-dfu.o usb-lib-dfu-app.o usb-lib-cdc-acm.o usb-lib-hid.o usb-lib-kinetis.o  nrf-lib-nrf.o  blink.linkdep blink.ld-template blink.ld
+arm-none-eabi-ld: warning: cannot find entry symbol Reset_Handler; defaulting to 00000c00
+arm-none-eabi-ld: warning: cannot find entry symbol Reset_Handler; defaulting to 00000c00
+nicolas[dev]$ ll
+total 28
+drwxr-xr-x  6 nicolas users 4096 Dec  6 17:01 .
+drwx--x--x 29 nicolas users 4096 Dec  6 17:02 ..
+drwxr-xr-x  2 nicolas users 4096 Dec  6 17:06 _archives
+drwxr-xr-x  2 nicolas users 4096 Dec  5 16:30 doc
+drwxr-xr-x  6 nicolas users 4096 Dec  5 16:29 mchck
+-rwxr-xr-x  1 nicolas users  139 Dec  6 19:15 mk_app.sh
+drwxr-xr-x  8 nicolas users 4096 Dec  5 19:54 sat
+nicolas[dev]$ cd 
