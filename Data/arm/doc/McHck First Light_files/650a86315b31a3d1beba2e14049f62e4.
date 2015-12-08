@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="650a86315b31a3d1beba2e14049f62e4_data/fonts.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="nofollow">
+
+  <link rel="stylesheet" href="650a86315b31a3d1beba2e14049f62e4_data/noteView.css">
+  <title>Note content</title>
+</head>
+<body id="note-frame-body">
+  <div class="note-content"><div style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;" class="ennote">
+<div>I managed to solder and program a&nbsp;<a href="https://www.evernote.com/OutboundRedirect.action?dest=https%3A%2F%2Fmchck.org%2Fblog%2F2013-08-06-self-built-mchck-for-5-dollars%2F"><b>McHck</b></a>&nbsp;last
+ weekend. &nbsp;It went pretty well. &nbsp;I'm impressed with the 
+documentation and tooling around this board. &nbsp;There's a lot of 
+code, however, and a lot of it is in Ruby, which is not a language I'm 
+familiar with. &nbsp;That said, apart from a few problems with 
+soldering, and some frustration with the Segger tools (a recurring theme
+ for me these days), it went about as well as could be expected.</div>
+<div><br></div>
+<div>I'm hoping to use the excellent work here done on SWD programming 
+for my nRF521822 experiments so I don't have to rely on Segger's crappy 
+mac support.</div>
+<div><br></div>
+<div><b style="font-size: 18px;">Hardware</b></div>
+<div><br></div>
+<div>I ordered boards from&nbsp;<a href="http://www.oshpark.com/shared_projects/3fbI8Zc4">OSH Park</a>&nbsp;($6.95 for three boards shipped!).&nbsp; I ordered&nbsp;<a href="https://www.evernote.com/OutboundRedirect.action?dest=https%3A%2F%2Fgithub.com%2Fmchck%2Fmchck%2Fwiki%2FBOM">components from Digikey</a>&nbsp;and&nbsp;<a href="http://www.freescale.com/webapp/search.partparamdetail.framework?PART_NUMBER=MK20DX128VLF5&amp;buyNow=true#Ordering_Information">sample MCUs</a>&nbsp;from
+ Freescale. I ordered the 128k flash parts, whereas I think the kits are
+ spec'd with the cheaper 32k version (and I probably would use those 
+eventually as well).</div>
+<div><br></div>
+<div>Soldering was relatively easy. I hand soldered rather than hot 
+plated (as I did for previous, more complex designs). &nbsp;I screwed up
+ one board by trying to do the drag method of tinning the pads and ended
+ up with a bunch of bridges and eventually ripped of one of the pads 
+trying to clean everything up.</div>
+<div><br></div>
+<div><i style="font-size: 14px;">First failed attempt – note ripped off pad – ruh-roh:</i><br></div>
+<div><div style="display: inline-block;" class="image-and-hover"><img name="02ce184b-5912-4f98-bf96-bdf77b978122" src="650a86315b31a3d1beba2e14049f62e4_data/mchck_20131011_1.jpg" class="en-media"><div class="image-hover-container"><a class="hover-download" title="Download" href="#"></a><a class="hover-gallery" title="Image Gallery" href="#"></a></div></div></div>
+<div><div style="display: inline-block;" class="image-and-hover"><img name="cc9abbe6-472a-4d3a-8831-b0e342fda27f" src="650a86315b31a3d1beba2e14049f62e4_data/mchck_20131011_2.jpg" class="en-media"><div class="image-hover-container"><a class="hover-download" title="Download" href="#"></a><a class="hover-gallery" title="Image Gallery" href="#"></a></div></div><br></div>
+<div><br></div>
+<div><br></div>
+<div>On the second one, I took my time and used a lot of flux and 
+managed to tin the pads evenly without destroying them. &nbsp;I found 
+that short strokes of the solder loaded iron in parallel with the pads 
+(away from the center of the chip) worked much better than dragging 
+across all the pads on one side of the chip. &nbsp;I used tweezers to 
+place the chip I tacked two corners of the chip and then carefully 
+touched a clean iron tip to each of the pins. &nbsp;You really don't 
+need much solder.</div>
+<div><br></div>
+<div><br></div>
+<div style="font-size: 14px;"><i>Successfully soldered McHck:</i></div>
+<div><div style="display: inline-block;" class="image-and-hover"><img name="0e6bd8a8-88a2-4e7e-858e-a103d506c70a" src="650a86315b31a3d1beba2e14049f62e4_data/mchck_20131011_4.jpg" class="en-media"><div class="image-hover-container"><a class="hover-download" title="Download" href="#"></a><a class="hover-gallery" title="Image Gallery" href="#"></a></div></div><br></div>
+<div><div style="display: inline-block;" class="image-and-hover"><img name="2a08981d-0026-412c-8a4b-0aca228a1b2a" src="650a86315b31a3d1beba2e14049f62e4_data/mchck_20131011_3.jpg" class="en-media"><div class="image-hover-container"><a class="hover-download" title="Download" href="#"></a><a class="hover-gallery" title="Image Gallery" href="#"></a></div></div><br></div>
+<div><br></div>
+<div><br></div>
+<div>I stripped a spare SWD debug cable (cut ribbon cable apart with 
+xacto knife, strip tiny wires, cut through wires accidentally, curse, go
+ back to step 1 :). &nbsp;Soldered this on to the McHck's SWD pins plus 
+power and ground. &nbsp;I left RST unconnected and that seemed to work.</div>
+<div><br></div>
+<div><br></div>
+<div style="font-size: 14px;"><i>Soldered SWD cable. Yeah it's not pretty:</i></div>
+<div><div style="display: inline-block;" class="image-and-hover"><img name="dbccb810-1e5f-4276-9b0a-e087af9f6a38" src="650a86315b31a3d1beba2e14049f62e4_data/mchck_20131011_5.jpg" class="en-media"><div class="image-hover-container"><a class="hover-download" title="Download" href="#"></a><a class="hover-gallery" title="Image Gallery" href="#"></a></div></div><br></div>
+<div><div style="display: inline-block;" class="image-and-hover"><img name="c72810f8-72f2-4979-b8b6-28d8d07dbd63" src="650a86315b31a3d1beba2e14049f62e4_data/mchck_20131011_6.jpg" class="en-media"><div class="image-hover-container"><a class="hover-download" title="Download" href="#"></a><a class="hover-gallery" title="Image Gallery" href="#"></a></div></div><br></div>
+<div><br></div>
+<div><br></div>
+<div>I had originally intended to modify the board layout to have a&nbsp;<a href="http://www.digikey.com/scripts/DKSearch/dksus.dll?Detail&amp;itemSeq=137978606&amp;uq=635170974706256957">10pin 0.05" header</a>&nbsp;(and
+ I ordered these headers) but I just didn't have time a couple weeks ago
+ when I ordered the boards. &nbsp;Sure wish I had; it would have been 
+way easier than this futzy stripping and soldering that took probably an
+ hour and a half.</div>
+<div><br></div>
+<div><br></div>
+<div><br></div>
+<div><span style="font-size: 18px;"><b>Software</b></span></div>
+<div><br></div>
+<div>Ok, now I need a compiled boot loader. &nbsp;The code was easy enough to checkout:</div>
+<div><br></div>
+<blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;">
+<div><font color="#5F7E6E" face="Andale Mono">&gt; <b>git clone&nbsp;git://github.com/mchck/mchck.git</b></font></div>
+</blockquote>
+<div><br></div>
+<div>According to their web pages, I needed to install Ruby 2.0 as the 1.8.7 version on MacOS 10.8 is not recent enough.</div>
+<div><br></div>
+<blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;">
+<div><span style="color: rgb(95, 126, 110); font-family: 'Andale Mono';">&gt;</span><span style="color: rgb(95, 126, 110); font-family: 'Andale Mono';">&nbsp;</span><b style="color: rgb(95, 126, 110); font-family: 'Andale Mono';">brew install ruby</b></div>
+</blockquote>
+<div><br></div>
+<div>But now I needed a compiler toolchain.</div>
+<blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;"></blockquote>
+<div><br></div>
+<div>The McHck folks suggest (really insist) that you use the 
+summon-arm-toolchain. &nbsp;However that toolchain is deprecated and 
+moreover their binaries were all for PCs and I'm on a Mac. &nbsp;What's a
+ boy to do?</div>
+<div><br></div>
+<div>Well, I had&nbsp;<a href="https://www.evernote.com/OutboundRedirect.action?dest=https%3A%2F%2Flaunchpad.net%2Fgcc-arm-embedded">arm-gcc-embedded</a>&nbsp;(<span style="color: rgb(43, 43, 43); font-size: 13px; line-height: 16px; text-align: left;">4_7-2013q2) lying around, but they&nbsp;</span><a href="https://www.evernote.com/OutboundRedirect.action?dest=https%3A%2F%2Fgithub.com%2Fmchck%2Fmchck%2Fwiki%2FGetting%2520started%23install-toolchain-software">say</a><span style="color: rgb(43, 43, 43); font-size: 13px; line-height: 16px; text-align: left;">&nbsp;it "</span>has a bug and will not work." (since corrected)<span style="-evernote-last-insertion-point:true;"></span>&nbsp;<span style="color: rgb(43, 43, 43); font-size: 13px; line-height: 16px; text-align: left;">&nbsp;I
+ figured I'd try to make it work anyway. &nbsp;Googling around suggested
+ that the problem with was LTO (link time optimization). &nbsp;Reading 
+the Makefiles revealed that NO_LTO would disable LTO. &nbsp;Let's give 
+it a shot:</span></div>
+<div><br></div>
+<blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;">
+<div><font color="#5F7E6E"><font face="Andale Mono">&gt; cd&nbsp;</font><span style="font-family: 'Andale Mono';">bootloader/usb-dfu</span></font></div>
+<div><font color="#5F7E6E" face="Andale Mono">&gt; <b>make NO_LTO=1</b></font></div>
+<div><font color="#5F7E6E" face="Andale Mono">arm-none-eabi-gcc -MM 
+-I../../toolchain//include -I../../toolchain//lib -std=gnu11 
+-I../../toolchain//CMSIS/Include -I. -include 
+../../toolchain//include/mchck_internal.h -MT mchck-lib-startup_k20.d 
+-MT mchck-lib-startup_k20.o -MP -MF mchck-lib-startup_k20.d 
+../../toolchain//lib/mchck/startup_k20.c</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">[…]</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">arm-none-eabi-gcc -E -o 
+dfu.ld-template -P -CC -I../../toolchain//ld -I. 
+-DTARGET_LDSCRIPT='"MK20DX32VLF5.ld"' -DMEMCFG_LDSCRIPT='"loader.ld"' 
+../../toolchain//ld/link.ld.S</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">arm-none-eabi-gcc -o 
+dfu.elf -DSHORT_ISR -fplan9-extensions -ggdb3 -Os -Wall -Wno-main 
+-mcpu=cortex-m4 -msoft-float -mthumb -ffunction-sections -fdata-sections
+ -fno-builtin -fstrict-volatile-bitfields -Wl,--gc-sections 
+-fwhole-program -T dfu.ld-template -nostartfiles -Wl,-Map=dfu.map 
+-Wl,-output-linker-script=dfu.ld main-kinetis.o mchck-lib-builtins.o 
+mchck-lib-flash.o mchck-lib-flashconfig_k20.o mchck-lib-startup_k20.o 
+mchck-lib-system.o usb-lib-dfu.o usb-lib-kinetis.o usb-lib-usb.o</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">arm-none-eabi-objcopy -O binary dfu.elf dfu.bin.tmp</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">ls -l dfu.bin.tmp | awk '{ s=$5; as=3072; printf "%d bytes available\n", (as - s); if (s &gt; as) { exit 1; }}'</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">76 bytes available</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">mv dfu.bin.tmp dfu.bin</font></div>
+</blockquote>
+<div><br></div>
+<div>Hey at least it compiled. &nbsp;What does 76 bytes available mean? 
+&nbsp;It looks like they've reserved 3k at the beginning of the flash 
+for the boot loader. &nbsp;Not sure if they're using memory protection 
+capability of this chip to secure that area. &nbsp;Looks like we've just
+ squeaked under the limit:</div>
+<div><br></div>
+<blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;"><font color="#5F7E6E" face="Andale Mono">&gt; arm-none-eabi-size dfu.elf</font>
+<div><font color="#5F7E6E" face="Andale Mono">&nbsp;&nbsp; 
+text&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+data&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+bss&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+dec&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+hex&nbsp;&nbsp;&nbsp;&nbsp; filename</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">&nbsp; 
+&nbsp;2996&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+4072&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+7068&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+1b9c&nbsp;&nbsp;&nbsp;&nbsp; dfu.elf</font></div>
+</blockquote>
+<div><br></div>
+<div>LTO results in a smaller binary (516 bytes available) but I read 
+(somewhere?) that it doesn't work with the gcc-arm-embedded toolchain.</div>
+<div><br></div>
+<div>Convert the ELF to bin format for flashing:</div>
+<div><br></div>
+<blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;">
+<div><font color="#5F7E6E" face="Andale Mono"><b>&gt; arm-none-eabi-objcopy -j .text -j .data -O binary dfu.elf dfu.bin</b>&nbsp;</font></div>
+</blockquote>
+<div><br></div>
+<div><br></div>
+<div>I didn't have a bus pirate or bus blaster, so I used the same JLink Lite that I've been using for my nRF51822 work.</div>
+<div><br></div>
+<div>Originally, when I just ran JLinkExe with the chip hooked up via my horrorshow cable, I got:</div>
+<div><br></div>
+<div>
+<blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;"><font color="#605E47" face="Andale Mono">&gt; JLinkExe</font>
+<div><font color="#605E47" face="Andale Mono">SEGGER J-Link Commander V4.74 ('?' for help)</font></div>
+<div><font color="#605E47" face="Andale Mono">Compiled Jul 17 2013 11:48:54</font></div>
+<div><font color="#605E47" face="Andale Mono">DLL version V4.74, compiled Jul 17 2013 11:48:50</font></div>
+<div><font color="#605E47" face="Andale Mono">Firmware: J-Link Lite-Cortex-M V8 compiled Aug 29 2012 15:24:23</font></div>
+<div><font color="#605E47" face="Andale Mono">Hardware: V8.00</font></div>
+<div><font color="#605E47" face="Andale Mono">S/N: 518001332</font></div>
+<div><font color="#605E47" face="Andale Mono">Feature(s): GDB</font></div>
+<div><font color="#605E47" face="Andale Mono">VTarget = 3.254V</font></div>
+<div><font color="#605E47" face="Andale Mono">Info: Found SWD-DP with ID 0x2BA01477</font></div>
+<div><font color="#605E47" face="Andale Mono"><br></font></div>
+<div><font color="#605E47" face="Andale Mono">****** Error: Could not read AHB-AP Id. Could not connect to target.</font></div>
+<div><font color="#605E47" face="Andale Mono">Info: Found SWD-DP with ID 0x2BA01477</font></div>
+<div><font color="#605E47" face="Andale Mono">No devices found on JTAG chain. Trying to find device on SWD.</font></div>
+<div><font color="#605E47" face="Andale Mono">Info: Found SWD-DP with ID 0x2BA01477</font></div>
+<div><font color="#605E47" face="Andale Mono"><br></font></div>
+<div><font color="#605E47" face="Andale Mono">****** Error: Could not read AHB-AP Id. Could not connect to target.</font></div>
+<div><font color="#605E47" face="Andale Mono">Info: Found SWD-DP with ID 0x2BA01477</font></div>
+<div><font color="#605E47" face="Andale Mono">No device found on SWD.</font></div>
+<div><font color="#605E47" face="Andale Mono"><br></font></div>
+<div><font color="#605E47" face="Andale Mono"><br></font></div>
+<div><font color="#605E47" face="Andale Mono">*** J-Link V4.74 Error ***</font></div>
+<div><font color="#605E47" face="Andale Mono">Second debugger connection to the same J-Link detected.</font></div>
+<div><font color="#605E47" face="Andale Mono">J-Link currently uses target interface SWD while current debugger tries to select target interface JTAG.</font></div>
+<div><font color="#605E47" face="Andale Mono">Currently selected target interface will not be changed.</font></div>
+<div><font color="#605E47" face="Andale Mono">*** J-Link V4.74 Error ***</font></div>
+<div><font color="#605E47" face="Andale Mono"><br></font></div>
+<div><font color="#605E47" face="Andale Mono">Failed to identify target. Trying again with slow (4 kHz) speed.</font></div>
+<div><font color="#605E47" face="Andale Mono">Info: Found SWD-DP with ID 0x2BA01477</font></div>
+<div><font color="#605E47" face="Andale Mono"><br></font></div>
+<div><font color="#605E47" face="Andale Mono">****** Error: Could not read AHB-AP Id. Could not connect to target.</font></div>
+<div><font color="#605E47" face="Andale Mono">Info: Found SWD-DP with ID 0x2BA01477</font></div>
+<div><font color="#605E47" face="Andale Mono">No devices found on JTAG chain. Trying to find device on SWD.</font></div>
+<div><font color="#605E47" face="Andale Mono">Info: Found SWD-DP with ID 0x2BA01477</font></div>
+<div><font color="#605E47" face="Andale Mono">^C</font><br></div>
+<div><br></div>
+</blockquote>
+<div>Uhoh. &nbsp;Did I make a mistake soldering the cable? &nbsp;Well, 
+it's at least got VTarget=~3.3V, and it said it found the SWD debug 
+port, so it must be doing something!</div>
+<div><br></div>
+<div>Hmm. &nbsp;I tried messing around with device specifications thinking I could just specify the major type of the chip:</div>
+<div><br></div>
+</div>
+<blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;">
+<div><font color="#5F7E6E" face="Andale Mono">J-Link&gt;device mk20dx128&nbsp;</font></div>
+</blockquote>
+<div>
+<div><br></div>
+<div>but I kept getting:</div>
+<div><br></div>
+</div>
+<blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;">
+<div><font color="#5F7E6E" face="Andale Mono">Info: The selected device "MK20DX128" is unknown to this version of the J-Link software.</font></div>
+</blockquote>
+<div>
+<div><br></div>
+<div>Oddly, it would sort of work after that, but when it went to flash, it would just sit there:</div>
+<div><br></div>
+</div>
+<blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;">
+<div><font face="Andale Mono">J-Link&gt;loadbin /Users/cmason/code/mchck/mchck/bootloader/usb-dfu/dfu.bin 0</font></div>
+<div><font face="Andale Mono">Loading binary file... [/Users/cmason/code/mchck/mchck/bootloader/usb-dfu/dfu.bin]</font></div>
+<div><font face="Andale Mono">Writing bin data into target memory @ 0x00000000.</font></div>
+<div><font face="Andale Mono">J-Link&gt;</font></div>
+</blockquote>
+<div>
+<div>&nbsp;</div>
+<div>Uh so it says it's writing but it doesn't really.</div>
+<div><br></div>
+<div>The key was discovering this list of&nbsp;<a href="http://www.segger.com/jlink_supported_devices.html">supported devices</a>&nbsp;at Segger. &nbsp;Ahah! &nbsp;I need to specify the variant like &nbsp;"MK20DX128xxx5". &nbsp;If I use:</div>
+</div>
+<div><br></div>
+<blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;"><font face="Andale Mono"><font color="#5E5F43">&gt; <b>JLinkExe -device MK20DX128xxx5 -if SWD</b></font></font>
+<div><font color="#5E5F43" face="Andale Mono">SEGGER J-Link Commander V4.74 ('?' for help)</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Compiled Jul 17 2013 11:48:54</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Info: Device "MK20DX128XXX5" selected (160 KB flash, 16 KB RAM).</font></div>
+<div><font color="#5E5F43" face="Andale Mono">DLL version V4.74, compiled Jul 17 2013 11:48:50</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Firmware: J-Link Lite-Cortex-M V8 compiled Aug 29 2012 15:24:23</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Hardware: V8.00</font></div>
+<div><font color="#5E5F43" face="Andale Mono">S/N: 518001332</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Feature(s): GDB</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Emulator has Trace capability</font></div>
+<div><font color="#5E5F43" face="Andale Mono">VTarget = 3.254V</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Info: Found SWD-DP with ID 0x2BA01477</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Info: Secured Kinetis device detected. For debugger connection the device needs to be unsecured.</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Device will be unsecured now.</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Note: Unsecuring will trigger a mass erase of the internal flash.</font></div>
+<div><font color="#5E5F43" face="Andale Mono"><br></font></div>
+<div><font color="#5E5F43" face="Andale Mono">****** Error: Kinetis (connect): Timeout while unsecuring device. Erase never starts.</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Info: Found SWD-DP with ID 0x2BA01477</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Info: Secured Kinetis device detected. For debugger connection the device needs to be unsecured.</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Device will be unsecured now.</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Note: Unsecuring will trigger a mass erase of the internal flash.</font></div>
+<div><font color="#5E5F43" face="Andale Mono"><br></font></div>
+<div><font color="#5E5F43" face="Andale Mono">****** Error: Kinetis (connect): Timeout while unsecuring device. Erase never starts.</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Can not connect to target.</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Failed to identify target. Trying again with slow (4 kHz) speed.</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Info: Found SWD-DP with ID 0x2BA01477</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Info: Secured Kinetis device detected. For debugger connection the device needs to be unsecured.</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Device will be unsecured now.</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Note: Unsecuring will trigger a mass erase of the internal flash.</font></div>
+<div><font color="#5E5F43" face="Andale Mono"><br></font></div>
+<div><font color="#5E5F43" face="Andale Mono">****** Error: Kinetis (connect): Timeout while unsecuring device. Erase never starts.</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Info: Found SWD-DP with ID 0x2BA01477</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Info: Found SWD-DP with ID 0x2BA01477</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Info: TPIU fitted.</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Info: ETM fitted.</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Info: ETB present.</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Info: CSTF present.</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Info: FPUnit: 6 code (BP) slots and 2 literal slots</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Info: Found Cortex-M4 r0p1, Little endian.</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Can not connect to target.</font></div>
+<div><font color="#5E5F43" face="Andale Mono">J-Link&gt;<b>r</b></font></div>
+<div><font color="#5E5F43" face="Andale Mono">Reset delay: 0 ms</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Reset type NORMAL: Resets core &amp; peripherals via SYSRESETREQ &amp; VECTRESET bit.</font></div>
+<div><font color="#5E5F43" face="Andale Mono">J-Link&gt;<b>loadbin /Users/cmason/code/mchck/mchck/bootloader/usb-dfu/dfu.bin 0</b></font></div>
+<div><font color="#5E5F43" face="Andale Mono">Loading binary file... [/Users/cmason/code/mchck/mchck/bootloader/usb-dfu/dfu.bin]</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Writing bin data into target memory @ 0x00000000.</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Info: J-Link: Flash download: Flash programming performed for 1 range (3072 bytes)</font></div>
+<div><font color="#5E5F43" face="Andale Mono">Info: J-Link: Flash 
+download: Total time needed: 32.907s (Prepare: 14.729s, Compare: 0.245s,
+ Erase: 1.556s, Program: 14.954s, Verify: 0.110s, Restore: 1.311s)</font></div>
+<div><font color="#5E5F43" face="Andale Mono">J-Link&gt;<b>r</b></font></div>
+</blockquote>
+<div><br></div>
+<div>It flashed! &nbsp;I'm not sure what's up with "unsecuring." 
+&nbsp;That may be because of previous failed attempts. &nbsp;If I 
+connect with JLinkExe again, it doesn't do that.</div>
+<div>
+<div><br></div>
+<div>Unplug and replug and yay it shows up in USBProber:</div>
+<div><br></div>
+<div><div style="display: inline-block;" class="image-and-hover"><img name="5c5654b3-e4f7-4b5d-96d6-c815ac7f35fd" src="650a86315b31a3d1beba2e14049f62e4_data/5c5654b3-e4f7-4b5d-96d6-c815ac7f35fd.jpg" class="en-media"><div class="image-hover-container"><a class="hover-download" title="Download" href="#"></a><a class="hover-gallery" title="Image Gallery" href="#"></a></div></div><br></div>
+<div><br></div>
+<div>Yay! &nbsp;Ok, let's flash a blink program! &nbsp;</div>
+<div><br></div>
+</div>
+<blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;">
+<div><font color="#5F7E6E" face="Andale Mono">&gt; cd examples/blink</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">&gt; make flash</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">dfu-util -D blink.bin</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">make: dfu-util: No such file or directory</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">make: *** [flash] Error 1</font></div>
+</blockquote>
+<div>
+<div><br></div>
+<div>Where the hell is dfu-util in the git repo? &nbsp;Nowhere. &nbsp;Oh, dfu-util is an external program. &nbsp;Let's install it.</div>
+<div><br></div>
+</div>
+<blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;">
+<div><font color="#5F7E6E" face="Andale Mono">&gt; <b>brew install dfu-util</b></font></div>
+</blockquote>
+<div>
+<div><br></div>
+<div>Now try again:</div>
+<div><br></div>
+</div>
+<blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;">
+<div><font color="#5F7E6E" face="Andale Mono">&gt; <b>make flash</b></font></div>
+<div><font color="#5F7E6E" face="Andale Mono">dfu-util -D blink.bin</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">dfu-util 0.7</font></div>
+<div><font color="#5F7E6E" face="Andale Mono"><br></font></div>
+<div><font color="#5F7E6E" face="Andale Mono">Copyright 2005-2008 Weston Schmidt, Harald Welte and OpenMoko Inc.</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">Copyright 2010-2012 Tormod Volden and Stefan Schmidt</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">This program is Free Software and has ABSOLUTELY NO WARRANTY</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">Please report bugs to <a href="mailto:dfu-util@lists.gnumonks.org">dfu-util@lists.gnumonks.org</a></font></div>
+<div><font color="#5F7E6E" face="Andale Mono"><br></font></div>
+<div><font color="#5F7E6E" face="Andale Mono">Opening DFU capable USB device... ID 2323:0001</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">Run-time device DFU version 0110</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">Found DFU: [2323:0001] devnum=0, cfg=1, intf=0, alt=0, name="UNDEFINED"</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">Claiming USB DFU Interface...</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">Setting Alternate Setting #0 ...</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">Determining device status: state = dfuIDLE, status = 0</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">dfuIDLE, continuing</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">DFU mode device DFU version 0110</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">Device returned transfer size 1024</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">No valid DFU suffix signature</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">Warning: File has no DFU suffix</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">bytes_per_hash=22</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">Copying data from PC to DFU device</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">Starting download: [###################################################] finished!</font></div>
+<div><font color="#5F7E6E" face="Andale Mono">unable to read DFU status</font></div>
+</blockquote>
+<div>
+<div><br></div>
+<div><br></div>
+<div>Even though it says "unable to read DFU status" it's worked:</div>
+<div><br></div>
+<div><div style="display: inline-block;" class="image-and-hover"><img name="6ebc6791-7c0f-4130-bc56-ded63822f0ea" src="650a86315b31a3d1beba2e14049f62e4_data/6ebc6791-7c0f-4130-bc56-ded63822f0ea.jpg" class="en-media"><div class="image-hover-container"><a class="hover-download" title="Download" href="#"></a><a class="hover-gallery" title="Image Gallery" href="#"></a></div></div><br></div>
+<div><b><br></b></div>
+<div><b>Yay!</b></div>
+<div><br></div>
+<div><br></div>
+<div><br></div>
+<div><br></div>
+<div><br></div>
+<div><br></div>
+<div><font color="#B2AFB3"><br></font></div>
+<div><font color="#B2AFB3"><br></font></div>
+<div style="font-size: 10px;"><font color="#B2AFB3">Misc Notes:</font></div>
+<div style="font-size: 10px;"><font color="#B2AFB3"><br></font></div>
+<div style="font-size: 10px;"><font color="#B2AFB3">RSetType 2 &nbsp;// needed?</font></div>
+<div style="font-size: 10px;"><font color="#B2AFB3">si 1</font></div>
+<div style="font-size: 10px;"><font color="#B2AFB3">speed 400</font></div>
+<div style="font-size: 10px;"><font color="#B2AFB3">r</font></div>
+<div style="font-size: 10px;"><font color="#B2AFB3">device&nbsp;MK20DX128xxx5</font></div>
+</div>
+</div></div>
+
+
+</body></html>

@@ -1,0 +1,937 @@
+
+blink.elf:     file format elf32-littlearm
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000004d4  00000c00  00000c00  00000c00  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          0000002c  1ffff000  1ffff000  00007000  2**2
+                  ALLOC
+  2 .co_stack     00000404  1ffff02c  1ffff02c  00007000  2**2
+                  ALLOC
+  3 .debug_info   000039a2  00000000  00000000  000010d4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_abbrev 00000573  00000000  00000000  00004a76  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_loc    00000330  00000000  00000000  00004fe9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_aranges 00000090  00000000  00000000  00005319  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_ranges 00000150  00000000  00000000  000053a9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   000005b6  00000000  00000000  000054f9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00001f80  00000000  00000000  00005aaf  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .comment      0000003a  00000000  00000000  00007a2f  2**0
+                  CONTENTS, READONLY
+ 11 .ARM.attributes 00000033  00000000  00000000  00007a69  2**0
+                  CONTENTS, READONLY
+ 12 .debug_frame  0000011c  00000000  00000000  00007a9c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000c00 <isr_vectors>:
+     c00:	30 f4 ff 1f b5 0f 00 00 71 0f 00 00 71 0f 00 00     0.......q...q...
+     c10:	71 0f 00 00 71 0f 00 00 71 0f 00 00 00 00 00 00     q...q...q.......
+     c20:	00 00 00 00 00 00 00 00 00 00 00 00 71 0f 00 00     ............q...
+     c30:	71 0f 00 00 00 00 00 00 71 0f 00 00 71 0f 00 00     q.......q...q...
+     c40:	71 0f 00 00 71 0f 00 00 71 0f 00 00 71 0f 00 00     q...q...q...q...
+     c50:	71 0f 00 00 00 00 00 00 71 0f 00 00 71 0f 00 00     q.......q...q...
+     c60:	71 0f 00 00 71 0f 00 00 71 0f 00 00 71 0f 00 00     q...q...q...q...
+     c70:	71 0f 00 00 71 0f 00 00 71 0f 00 00 71 0f 00 00     q...q...q...q...
+     c80:	71 0f 00 00 71 0f 00 00 71 0f 00 00 71 0f 00 00     q...q...q...q...
+     c90:	71 0f 00 00 71 0f 00 00 71 0f 00 00 71 0f 00 00     q...q...q...q...
+     ca0:	71 0f 00 00 71 0f 00 00 71 0f 00 00 71 0f 00 00     q...q...q...q...
+     cb0:	71 0f 00 00 71 0f 00 00 71 0f 00 00 71 0f 00 00     q...q...q...q...
+     cc0:	71 0f 00 00 71 0f 00 00 71 0f 00 00 71 0f 00 00     q...q...q...q...
+     cd0:	71 0f 00 00 71 0f 00 00 71 0f 00 00 89 0e 00 00     q...q...q.......
+     ce0:	71 0f 00 00 71 0f 00 00 71 0f 00 00 71 0f 00 00     q...q...q...q...
+     cf0:	71 0f 00 00 71 0f 00 00                             q...q...
+
+00000cf8 <pin_mode.constprop.5.4116>:
+pin_mode(enum pin_id pin, enum pin_mode mode)
+{
+        int pinnum = pin_physpin_from_pin(pin);
+
+        /* enable port clock */
+        SIM.scgc5.raw |= 1 << (pin_portnum_from_pin(pin) + 8);
+     cf8:	4b34      	ldr	r3, [pc, #208]	; (dcc <pin_mode.constprop.5.4116+0xd4>)
+     cfa:	699a      	ldr	r2, [r3, #24]
+     cfc:	f442 6280 	orr.w	r2, r2, #1024	; 0x400
+     d00:	619a      	str	r2, [r3, #24]
+
+        struct PCR_t pcr = pin_physport_from_pin(pin)->pcr[pinnum];
+     d02:	4b33      	ldr	r3, [pc, #204]	; (dd0 <pin_mode.constprop.5.4116+0xd8>)
+     d04:	6c1b      	ldr	r3, [r3, #64]	; 0x40
+
+        if (mode & PIN_MODE_RESET) {
+     d06:	2800      	cmp	r0, #0
+                pcr.raw &= ~0xff;
+     d08:	bfbc      	itt	lt
+     d0a:	f023 03ff 	biclt.w	r3, r3, #255	; 0xff
+                pcr.mux = 0;
+     d0e:	f36f 230a 	bfclt	r3, #8, #3
+        }
+
+        if (mode & PIN_MODE__SLEW) {
+     d12:	0701      	lsls	r1, r0, #28
+     d14:	d50b      	bpl.n	d2e <pin_mode.constprop.5.4116+0x36>
+                switch (mode & PIN_MODE__SLEW_MASK) {
+     d16:	f000 020c 	and.w	r2, r0, #12
+     d1a:	2a08      	cmp	r2, #8
+     d1c:	d002      	beq.n	d24 <pin_mode.constprop.5.4116+0x2c>
+     d1e:	2a0c      	cmp	r2, #12
+     d20:	d105      	bne.n	d2e <pin_mode.constprop.5.4116+0x36>
+     d22:	e002      	b.n	d2a <pin_mode.constprop.5.4116+0x32>
+                case PIN_MODE_SLEW_FAST:
+                        pcr.sre = 0;
+     d24:	f36f 0382 	bfc	r3, #2, #1
+     d28:	e001      	b.n	d2e <pin_mode.constprop.5.4116+0x36>
+                        break;
+                case PIN_MODE_SLEW_SLOW:
+                        pcr.sre = 1;
+     d2a:	f043 0304 	orr.w	r3, r3, #4
+                        break;
+                }
+        }
+
+        if (mode & PIN_MODE__PULL) {
+     d2e:	0642      	lsls	r2, r0, #25
+     d30:	d511      	bpl.n	d56 <pin_mode.constprop.5.4116+0x5e>
+                switch (mode & PIN_MODE__PULL_MASK) {
+     d32:	f000 0270 	and.w	r2, r0, #112	; 0x70
+     d36:	2a50      	cmp	r2, #80	; 0x50
+     d38:	d00b      	beq.n	d52 <pin_mode.constprop.5.4116+0x5a>
+     d3a:	2a60      	cmp	r2, #96	; 0x60
+     d3c:	d004      	beq.n	d48 <pin_mode.constprop.5.4116+0x50>
+     d3e:	2a40      	cmp	r2, #64	; 0x40
+     d40:	d109      	bne.n	d56 <pin_mode.constprop.5.4116+0x5e>
+                case PIN_MODE_PULL_OFF:
+                        pcr.pe = 0;
+     d42:	f36f 0341 	bfc	r3, #1, #1
+     d46:	e006      	b.n	d56 <pin_mode.constprop.5.4116+0x5e>
+                        break;
+                case PIN_MODE_PULLDOWN:
+                        pcr.pe = 1;
+     d48:	f043 0302 	orr.w	r3, r3, #2
+                        pcr.ps = PCR_PULLDOWN;
+     d4c:	f36f 0300 	bfc	r3, #0, #1
+     d50:	e001      	b.n	d56 <pin_mode.constprop.5.4116+0x5e>
+                        break;
+                case PIN_MODE_PULLUP:
+                        pcr.pe = 1;
+                        pcr.ps = PCR_PULLUP;
+     d52:	f043 0303 	orr.w	r3, r3, #3
+                        break;
+                }
+        }
+
+        if (mode & PIN_MODE__DRIVE) {
+     d56:	05c1      	lsls	r1, r0, #23
+     d58:	d50d      	bpl.n	d76 <pin_mode.constprop.5.4116+0x7e>
+                switch (mode & PIN_MODE__DRIVE_MASK) {
+     d5a:	f400 72c0 	and.w	r2, r0, #384	; 0x180
+     d5e:	f5b2 7f80 	cmp.w	r2, #256	; 0x100
+     d62:	d003      	beq.n	d6c <pin_mode.constprop.5.4116+0x74>
+     d64:	f5b2 7fc0 	cmp.w	r2, #384	; 0x180
+     d68:	d105      	bne.n	d76 <pin_mode.constprop.5.4116+0x7e>
+     d6a:	e002      	b.n	d72 <pin_mode.constprop.5.4116+0x7a>
+                case PIN_MODE_DRIVE_LOW:
+                        pcr.dse = 0;
+     d6c:	f36f 1386 	bfc	r3, #6, #1
+     d70:	e001      	b.n	d76 <pin_mode.constprop.5.4116+0x7e>
+                        break;
+                case PIN_MODE_DRIVE_HIGH:
+                        pcr.dse = 1;
+     d72:	f043 0340 	orr.w	r3, r3, #64	; 0x40
+                        break;
+                }
+        }
+
+        if (mode & PIN_MODE__FILTER) {
+     d76:	0542      	lsls	r2, r0, #21
+     d78:	d50d      	bpl.n	d96 <pin_mode.constprop.5.4116+0x9e>
+                switch (mode & PIN_MODE__FILTER_MASK) {
+     d7a:	f400 62c0 	and.w	r2, r0, #1536	; 0x600
+     d7e:	f5b2 6f80 	cmp.w	r2, #1024	; 0x400
+     d82:	d003      	beq.n	d8c <pin_mode.constprop.5.4116+0x94>
+     d84:	f5b2 6fc0 	cmp.w	r2, #1536	; 0x600
+     d88:	d105      	bne.n	d96 <pin_mode.constprop.5.4116+0x9e>
+     d8a:	e002      	b.n	d92 <pin_mode.constprop.5.4116+0x9a>
+                case PIN_MODE_FILTER_OFF:
+                        pcr.pfe = 0;
+     d8c:	f36f 1304 	bfc	r3, #4, #1
+     d90:	e001      	b.n	d96 <pin_mode.constprop.5.4116+0x9e>
+                        break;
+                case PIN_MODE_FILTER_ON:
+                        pcr.pfe = 1;
+     d92:	f043 0310 	orr.w	r3, r3, #16
+                        break;
+                }
+        }
+
+        if (mode & PIN_MODE__OPEN_DRAIN) {
+     d96:	04c1      	lsls	r1, r0, #19
+     d98:	d50d      	bpl.n	db6 <pin_mode.constprop.5.4116+0xbe>
+                switch (mode & PIN_MODE__OPEN_DRAIN_MASK) {
+     d9a:	f400 52c0 	and.w	r2, r0, #6144	; 0x1800
+     d9e:	f5b2 5f80 	cmp.w	r2, #4096	; 0x1000
+     da2:	d003      	beq.n	dac <pin_mode.constprop.5.4116+0xb4>
+     da4:	f5b2 5fc0 	cmp.w	r2, #6144	; 0x1800
+     da8:	d105      	bne.n	db6 <pin_mode.constprop.5.4116+0xbe>
+     daa:	e002      	b.n	db2 <pin_mode.constprop.5.4116+0xba>
+                case PIN_MODE_OPEN_DRAIN_OFF:
+                        pcr.ode = 0;
+     dac:	f36f 1345 	bfc	r3, #5, #1
+     db0:	e001      	b.n	db6 <pin_mode.constprop.5.4116+0xbe>
+                        break;
+                case PIN_MODE_OPEN_DRAIN_ON:
+                        pcr.ode = 1;
+     db2:	f043 0320 	orr.w	r3, r3, #32
+                        break;
+                }
+        }
+
+        if (mode & PIN_MODE__MUX) {
+     db6:	03c2      	lsls	r2, r0, #15
+                pcr.mux = (mode & PIN_MODE__MUX_MASK) >> 13; /* XXX */
+     db8:	bf48      	it	mi
+     dba:	f3c0 3043 	ubfxmi	r0, r0, #13, #4
+        }
+
+        pin_physport_from_pin(pin)->pcr[pinnum] = pcr;
+     dbe:	4a04      	ldr	r2, [pc, #16]	; (dd0 <pin_mode.constprop.5.4116+0xd8>)
+                        break;
+                }
+        }
+
+        if (mode & PIN_MODE__MUX) {
+                pcr.mux = (mode & PIN_MODE__MUX_MASK) >> 13; /* XXX */
+     dc0:	bf48      	it	mi
+     dc2:	f360 230a 	bfimi	r3, r0, #8, #3
+        }
+
+        pin_physport_from_pin(pin)->pcr[pinnum] = pcr;
+     dc6:	6413      	str	r3, [r2, #64]	; 0x40
+     dc8:	4770      	bx	lr
+     dca:	bf00      	nop
+     dcc:	40048020 	.word	0x40048020
+     dd0:	4004a000 	.word	0x4004a000
+
+00000dd4 <crit_exit.4192>:
+}
+
+void
+crit_exit(void)
+{
+        if (--crit_nest == 0)
+     dd4:	4a03      	ldr	r2, [pc, #12]	; (de4 <crit_exit.4192+0x10>)
+     dd6:	6813      	ldr	r3, [r2, #0]
+     dd8:	3b01      	subs	r3, #1
+     dda:	6013      	str	r3, [r2, #0]
+     ddc:	b903      	cbnz	r3, de0 <crit_exit.4192+0xc>
+                __asm__("cpsie i");
+     dde:	b662      	cpsie	i
+     de0:	4770      	bx	lr
+     de2:	bf00      	nop
+     de4:	1ffff024 	.word	0x1ffff024
+
+00000de8 <timeout_schedule_wrap.5124.4198>:
+/* call with crit_active() */
+static void
+timeout_schedule_wrap(void)
+{
+        /* we get triggered at the end of the period, so -1 */
+        overflow.time.time = timeout_lazy_now.time - 1;
+     de8:	4a07      	ldr	r2, [pc, #28]	; (e08 <timeout_schedule_wrap.5124.4198+0x20>)
+     dea:	4b08      	ldr	r3, [pc, #32]	; (e0c <timeout_schedule_wrap.5124.4198+0x24>)
+     dec:	6812      	ldr	r2, [r2, #0]
+     dee:	3a01      	subs	r2, #1
+     df0:	601a      	str	r2, [r3, #0]
+        overflow.time.epoch += 1;
+     df2:	0c12      	lsrs	r2, r2, #16
+     df4:	3201      	adds	r2, #1
+     df6:	805a      	strh	r2, [r3, #2]
+        overflow.cb = timeout_empty;
+     df8:	4a05      	ldr	r2, [pc, #20]	; (e10 <timeout_schedule_wrap.5124.4198+0x28>)
+     dfa:	609a      	str	r2, [r3, #8]
+        overflow.next = timeout_queue;
+     dfc:	4a05      	ldr	r2, [pc, #20]	; (e14 <timeout_schedule_wrap.5124.4198+0x2c>)
+     dfe:	6811      	ldr	r1, [r2, #0]
+        timeout_queue = &overflow;
+     e00:	6013      	str	r3, [r2, #0]
+{
+        /* we get triggered at the end of the period, so -1 */
+        overflow.time.time = timeout_lazy_now.time - 1;
+        overflow.time.epoch += 1;
+        overflow.cb = timeout_empty;
+        overflow.next = timeout_queue;
+     e02:	6059      	str	r1, [r3, #4]
+        timeout_queue = &overflow;
+     e04:	4770      	bx	lr
+     e06:	bf00      	nop
+     e08:	1ffff000 	.word	0x1ffff000
+     e0c:	1ffff014 	.word	0x1ffff014
+     e10:	00000e61 	.word	0x00000e61
+     e14:	1ffff028 	.word	0x1ffff028
+
+00000e18 <timeout_reschedule.5128.4194>:
+}
+
+/* call with crit_active() */
+static void
+timeout_reschedule(void)
+{
+     e18:	b508      	push	{r3, lr}
+        if (timeout_queue == NULL) {
+     e1a:	4b0e      	ldr	r3, [pc, #56]	; (e54 <timeout_reschedule.5128.4194+0x3c>)
+     e1c:	681b      	ldr	r3, [r3, #0]
+     e1e:	b923      	cbnz	r3, e2a <timeout_reschedule.5128.4194+0x12>
+                        /* the queue is empty but we still need to
+                           keep the timebase running */
+                        timeout_schedule_wrap();
+                } else {
+                        /* we can stop the timebase */
+                        LPTMR0.csr.raw &= ~((struct LPTMR_CSR){ .ten = 1, .tie = 1 }).raw;
+     e20:	4b0d      	ldr	r3, [pc, #52]	; (e58 <timeout_reschedule.5128.4194+0x40>)
+     e22:	681a      	ldr	r2, [r3, #0]
+     e24:	f022 0241 	bic.w	r2, r2, #65	; 0x41
+     e28:	e012      	b.n	e50 <timeout_reschedule.5128.4194+0x38>
+                }
+                return;
+        }
+
+        /* will we have to wrap the epoch before the next timeout? */
+        if (timeout_queue->time.count > timeout_lazy_now.count &&
+     e2a:	4a0c      	ldr	r2, [pc, #48]	; (e5c <timeout_reschedule.5128.4194+0x44>)
+     e2c:	8818      	ldrh	r0, [r3, #0]
+     e2e:	8811      	ldrh	r1, [r2, #0]
+     e30:	4288      	cmp	r0, r1
+     e32:	d905      	bls.n	e40 <timeout_reschedule.5128.4194+0x28>
+     e34:	8859      	ldrh	r1, [r3, #2]
+     e36:	8853      	ldrh	r3, [r2, #2]
+     e38:	4299      	cmp	r1, r3
+     e3a:	d901      	bls.n	e40 <timeout_reschedule.5128.4194+0x28>
+            timeout_queue->time.epoch > timeout_lazy_now.epoch) {
+                timeout_schedule_wrap();
+     e3c:	f7ff ffd4 	bl	de8 <timeout_schedule_wrap.5124.4198>
+        }
+        LPTMR0.cmr = timeout_queue->time.count;
+     e40:	4b04      	ldr	r3, [pc, #16]	; (e54 <timeout_reschedule.5128.4194+0x3c>)
+     e42:	681b      	ldr	r3, [r3, #0]
+     e44:	881a      	ldrh	r2, [r3, #0]
+     e46:	4b04      	ldr	r3, [pc, #16]	; (e58 <timeout_reschedule.5128.4194+0x40>)
+     e48:	811a      	strh	r2, [r3, #8]
+        LPTMR0.csr.raw |= ((struct LPTMR_CSR){
+     e4a:	681a      	ldr	r2, [r3, #0]
+     e4c:	f042 02c1 	orr.w	r2, r2, #193	; 0xc1
+     e50:	601a      	str	r2, [r3, #0]
+     e52:	bd08      	pop	{r3, pc}
+     e54:	1ffff028 	.word	0x1ffff028
+     e58:	40040000 	.word	0x40040000
+     e5c:	1ffff000 	.word	0x1ffff000
+
+00000e60 <timeout_empty.5121.4200>:
+        return timeout_lazy_now;
+}
+
+static void
+timeout_empty(void *data)
+{
+     e60:	4770      	bx	lr
+     e62:	0000      	movs	r0, r0
+
+00000e64 <timeout_update_time.5119.4203>:
+/* call with crit_active() */
+static void
+timeout_update_time(void)
+{
+        /* tell ctr to latch */
+        LPTMR0.cnr = 0;
+     e64:	4b06      	ldr	r3, [pc, #24]	; (e80 <timeout_update_time.5119.4203+0x1c>)
+     e66:	2200      	movs	r2, #0
+     e68:	819a      	strh	r2, [r3, #12]
+        uint16_t now = LPTMR0.cnr;
+     e6a:	899a      	ldrh	r2, [r3, #12]
+        if (timeout_lazy_now.count > now)
+     e6c:	4b05      	ldr	r3, [pc, #20]	; (e84 <timeout_update_time.5119.4203+0x20>)
+     e6e:	8819      	ldrh	r1, [r3, #0]
+static void
+timeout_update_time(void)
+{
+        /* tell ctr to latch */
+        LPTMR0.cnr = 0;
+        uint16_t now = LPTMR0.cnr;
+     e70:	b292      	uxth	r2, r2
+        if (timeout_lazy_now.count > now)
+     e72:	4291      	cmp	r1, r2
+     e74:	d902      	bls.n	e7c <timeout_update_time.5119.4203+0x18>
+                timeout_lazy_now.epoch++;
+     e76:	8859      	ldrh	r1, [r3, #2]
+     e78:	3101      	adds	r1, #1
+     e7a:	8059      	strh	r1, [r3, #2]
+        timeout_lazy_now.count = now;
+     e7c:	801a      	strh	r2, [r3, #0]
+     e7e:	4770      	bx	lr
+     e80:	40040000 	.word	0x40040000
+     e84:	1ffff000 	.word	0x1ffff000
+
+00000e88 <LPT_Handler.4057>:
+        return (0);
+}
+
+void
+LPT_Handler(void)
+{
+     e88:	b570      	push	{r4, r5, r6, lr}
+static int crit_nest;
+
+void
+crit_enter(void)
+{
+        __asm__("cpsid i");
+     e8a:	b672      	cpsid	i
+        crit_nest++;
+     e8c:	4b10      	ldr	r3, [pc, #64]	; (ed0 <LPT_Handler.4057+0x48>)
+        crit_enter();
+        timeout_update_time();
+        if (timeout_queue == NULL) {
+     e8e:	4c11      	ldr	r4, [pc, #68]	; (ed4 <LPT_Handler.4057+0x4c>)
+     e90:	681a      	ldr	r2, [r3, #0]
+     e92:	3201      	adds	r2, #1
+     e94:	601a      	str	r2, [r3, #0]
+
+void
+LPT_Handler(void)
+{
+        crit_enter();
+        timeout_update_time();
+     e96:	f7ff ffe5 	bl	e64 <timeout_update_time.5119.4203>
+        if (timeout_queue == NULL) {
+     e9a:	6823      	ldr	r3, [r4, #0]
+     e9c:	b133      	cbz	r3, eac <LPT_Handler.4057+0x24>
+                crit_exit();
+                return;
+        }
+
+        // for each task whose time has past...
+        while (timeout_queue->time.time <= timeout_lazy_now.time) {
+     e9e:	4e0e      	ldr	r6, [pc, #56]	; (ed8 <LPT_Handler.4057+0x50>)
+                struct timeout_ctx *t = timeout_queue;
+                timeout_queue = t->next;
+                timeout_cb_t *cb = t->cb;
+                t->cb = NULL;
+     ea0:	2500      	movs	r5, #0
+                crit_exit();
+                return;
+        }
+
+        // for each task whose time has past...
+        while (timeout_queue->time.time <= timeout_lazy_now.time) {
+     ea2:	6823      	ldr	r3, [r4, #0]
+     ea4:	6832      	ldr	r2, [r6, #0]
+     ea6:	6819      	ldr	r1, [r3, #0]
+     ea8:	4291      	cmp	r1, r2
+     eaa:	d905      	bls.n	eb8 <LPT_Handler.4057+0x30>
+{
+        crit_enter();
+        timeout_update_time();
+        if (timeout_queue == NULL) {
+                // there are no tasks to run, schedule the next overflow
+                timeout_reschedule();
+     eac:	f7ff ffb4 	bl	e18 <timeout_reschedule.5128.4194>
+                if (!timeout_queue)
+                        break;
+        }
+        timeout_reschedule();
+        crit_exit();
+}
+     eb0:	e8bd 4070 	ldmia.w	sp!, {r4, r5, r6, lr}
+        crit_enter();
+        timeout_update_time();
+        if (timeout_queue == NULL) {
+                // there are no tasks to run, schedule the next overflow
+                timeout_reschedule();
+                crit_exit();
+     eb4:	f7ff bf8e 	b.w	dd4 <crit_exit.4192>
+        }
+
+        // for each task whose time has past...
+        while (timeout_queue->time.time <= timeout_lazy_now.time) {
+                struct timeout_ctx *t = timeout_queue;
+                timeout_queue = t->next;
+     eb8:	685a      	ldr	r2, [r3, #4]
+                timeout_cb_t *cb = t->cb;
+                t->cb = NULL;
+                cb(t->cbdata);
+     eba:	68d8      	ldr	r0, [r3, #12]
+        }
+
+        // for each task whose time has past...
+        while (timeout_queue->time.time <= timeout_lazy_now.time) {
+                struct timeout_ctx *t = timeout_queue;
+                timeout_queue = t->next;
+     ebc:	6022      	str	r2, [r4, #0]
+                timeout_cb_t *cb = t->cb;
+     ebe:	689a      	ldr	r2, [r3, #8]
+                t->cb = NULL;
+     ec0:	609d      	str	r5, [r3, #8]
+                cb(t->cbdata);
+     ec2:	4790      	blx	r2
+
+                timeout_update_time();
+     ec4:	f7ff ffce 	bl	e64 <timeout_update_time.5119.4203>
+                if (!timeout_queue)
+     ec8:	6823      	ldr	r3, [r4, #0]
+     eca:	2b00      	cmp	r3, #0
+     ecc:	d1e9      	bne.n	ea2 <LPT_Handler.4057+0x1a>
+     ece:	e7ed      	b.n	eac <LPT_Handler.4057+0x24>
+     ed0:	1ffff024 	.word	0x1ffff024
+     ed4:	1ffff028 	.word	0x1ffff028
+     ed8:	1ffff000 	.word	0x1ffff000
+
+00000edc <blink.4624.4024>:
+
+static struct timeout_ctx t;
+
+static void
+blink(void *data)
+{
+     edc:	b538      	push	{r3, r4, r5, lr}
+        int pinnum = pin_physpin_from_pin(pin);
+        volatile struct GPIO_t *pinp = gpio_physgpio_from_pin(pin);
+
+        switch (dir) {
+        case GPIO_OUTPUT:
+                pinp->pddr |= 1 << pinnum;
+     ede:	4c1e      	ldr	r4, [pc, #120]	; (f58 <blink.4624.4024+0x7c>)
+     ee0:	6963      	ldr	r3, [r4, #20]
+                goto set_mux;
+        case GPIO_INPUT:
+                pinp->pddr &= ~(1 << pinnum);
+        set_mux:
+                pin_mode(pin, PIN_MODE_MUX_ALT1);
+     ee2:	f44f 3090 	mov.w	r0, #73728	; 0x12000
+        int pinnum = pin_physpin_from_pin(pin);
+        volatile struct GPIO_t *pinp = gpio_physgpio_from_pin(pin);
+
+        switch (dir) {
+        case GPIO_OUTPUT:
+                pinp->pddr |= 1 << pinnum;
+     ee6:	f443 3380 	orr.w	r3, r3, #65536	; 0x10000
+     eea:	6163      	str	r3, [r4, #20]
+                goto set_mux;
+        case GPIO_INPUT:
+                pinp->pddr &= ~(1 << pinnum);
+        set_mux:
+                pin_mode(pin, PIN_MODE_MUX_ALT1);
+     eec:	f7ff ff04 	bl	cf8 <pin_mode.constprop.5.4116>
+                gpio_dir(led_pin, GPIO_DISABLE);
+                return;
+        }
+
+        gpio_dir(led_pin, GPIO_OUTPUT);
+        pin_mode(led_pin, PIN_MODE_DRIVE_HIGH);
+     ef0:	f44f 70c0 	mov.w	r0, #384	; 0x180
+     ef4:	f7ff ff00 	bl	cf8 <pin_mode.constprop.5.4116>
+}
+
+void
+gpio_toggle(enum gpio_pin_id pin)
+{
+        gpio_physgpio_from_pin(pin)->ptor = 1 << pin_physpin_from_pin(pin);
+     ef8:	f44f 3380 	mov.w	r3, #65536	; 0x10000
+     efc:	60e3      	str	r3, [r4, #12]
+static int crit_nest;
+
+void
+crit_enter(void)
+{
+        __asm__("cpsid i");
+     efe:	b672      	cpsid	i
+        crit_nest++;
+     f00:	4b16      	ldr	r3, [pc, #88]	; (f5c <blink.4624.4024+0x80>)
+{
+        crit_enter();
+        timeout_update_time();
+
+        // Ensure this context isn't already queued
+        if (t->cb) {
+     f02:	4c17      	ldr	r4, [pc, #92]	; (f60 <blink.4624.4024+0x84>)
+     f04:	681a      	ldr	r2, [r3, #0]
+     f06:	3201      	adds	r2, #1
+     f08:	601a      	str	r2, [r3, #0]
+
+void
+timeout_add(struct timeout_ctx *t, uint32_t ms, timeout_cb_t *cb, void *cbdata)
+{
+        crit_enter();
+        timeout_update_time();
+     f0a:	f7ff ffab 	bl	e64 <timeout_update_time.5119.4203>
+
+        // Ensure this context isn't already queued
+        if (t->cb) {
+     f0e:	68a1      	ldr	r1, [r4, #8]
+     f10:	b119      	cbz	r1, f1a <blink.4624.4024+0x3e>
+	onboard_led(ONBOARD_LED_TOGGLE);
+	timeout_add(&t, 500, blink, NULL);
+}
+     f12:	e8bd 4038 	ldmia.w	sp!, {r3, r4, r5, lr}
+                crit_exit();
+     f16:	f7ff bf5d 	b.w	dd4 <crit_exit.4192>
+                return;
+        }
+
+        *t = (struct timeout_ctx){
+                .time.time = ms + timeout_lazy_now.time + 1,
+     f1a:	4b12      	ldr	r3, [pc, #72]	; (f64 <blink.4624.4024+0x88>)
+        if (t->cb) {
+                crit_exit();
+                return;
+        }
+
+        *t = (struct timeout_ctx){
+     f1c:	4620      	mov	r0, r4
+                .time.time = ms + timeout_lazy_now.time + 1,
+     f1e:	681d      	ldr	r5, [r3, #0]
+        if (t->cb) {
+                crit_exit();
+                return;
+        }
+
+        *t = (struct timeout_ctx){
+     f20:	2210      	movs	r2, #16
+     f22:	f000 f885 	bl	1030 <memset>
+     f26:	4b10      	ldr	r3, [pc, #64]	; (f68 <blink.4624.4024+0x8c>)
+                .cbdata = cbdata,
+        };
+
+        /* XXX what if this traversal takes >= one timer tick? */
+        struct timeout_ctx **p;
+        for (p = &timeout_queue; *p != NULL; p = &(*p)->next) {
+     f28:	4910      	ldr	r1, [pc, #64]	; (f6c <blink.4624.4024+0x90>)
+        if (t->cb) {
+                crit_exit();
+                return;
+        }
+
+        *t = (struct timeout_ctx){
+     f2a:	60a3      	str	r3, [r4, #8]
+                .time.time = ms + timeout_lazy_now.time + 1,
+     f2c:	f205 15f5 	addw	r5, r5, #501	; 0x1f5
+        if (t->cb) {
+                crit_exit();
+                return;
+        }
+
+        *t = (struct timeout_ctx){
+     f30:	6025      	str	r5, [r4, #0]
+                .cbdata = cbdata,
+        };
+
+        /* XXX what if this traversal takes >= one timer tick? */
+        struct timeout_ctx **p;
+        for (p = &timeout_queue; *p != NULL; p = &(*p)->next) {
+     f32:	680b      	ldr	r3, [r1, #0]
+     f34:	e004      	b.n	f40 <blink.4624.4024+0x64>
+                if ((*p)->time.time > t->time.time)
+     f36:	681a      	ldr	r2, [r3, #0]
+     f38:	42aa      	cmp	r2, r5
+     f3a:	d803      	bhi.n	f44 <blink.4624.4024+0x68>
+                .cbdata = cbdata,
+        };
+
+        /* XXX what if this traversal takes >= one timer tick? */
+        struct timeout_ctx **p;
+        for (p = &timeout_queue; *p != NULL; p = &(*p)->next) {
+     f3c:	1d19      	adds	r1, r3, #4
+     f3e:	685b      	ldr	r3, [r3, #4]
+     f40:	2b00      	cmp	r3, #0
+     f42:	d1f8      	bne.n	f36 <blink.4624.4024+0x5a>
+                if ((*p)->time.time > t->time.time)
+                        break;
+        }
+        t->next = *p;
+     f44:	4a06      	ldr	r2, [pc, #24]	; (f60 <blink.4624.4024+0x84>)
+     f46:	6053      	str	r3, [r2, #4]
+        *p = t;
+
+        if (timeout_queue == t)
+     f48:	4b08      	ldr	r3, [pc, #32]	; (f6c <blink.4624.4024+0x90>)
+        for (p = &timeout_queue; *p != NULL; p = &(*p)->next) {
+                if ((*p)->time.time > t->time.time)
+                        break;
+        }
+        t->next = *p;
+        *p = t;
+     f4a:	600a      	str	r2, [r1, #0]
+
+        if (timeout_queue == t)
+     f4c:	681b      	ldr	r3, [r3, #0]
+     f4e:	4293      	cmp	r3, r2
+     f50:	d1df      	bne.n	f12 <blink.4624.4024+0x36>
+                timeout_reschedule();
+     f52:	f7ff ff61 	bl	e18 <timeout_reschedule.5128.4194>
+     f56:	e7dc      	b.n	f12 <blink.4624.4024+0x36>
+     f58:	400ff040 	.word	0x400ff040
+     f5c:	1ffff024 	.word	0x1ffff024
+     f60:	1ffff004 	.word	0x1ffff004
+     f64:	1ffff000 	.word	0x1ffff000
+     f68:	00000edd 	.word	0x00000edd
+     f6c:	1ffff028 	.word	0x1ffff028
+
+00000f70 <ADC0_Handler.4231>:
+#undef VH
+
+
+static void
+__Default_Handler(void)
+{
+     f70:	e7fe      	b.n	f70 <ADC0_Handler.4231>
+     f72:	0000      	movs	r0, r0
+
+00000f74 <main>:
+
+int
+main(void)
+{
+     f74:	b508      	push	{r3, lr}
+}
+
+void
+timeout_init(void)
+{
+        SIM.scgc5.lptimer = 1;
+     f76:	4a0b      	ldr	r2, [pc, #44]	; (fa4 <main+0x30>)
+     f78:	6993      	ldr	r3, [r2, #24]
+     f7a:	f043 0301 	orr.w	r3, r3, #1
+     f7e:	6193      	str	r3, [r2, #24]
+        LPTMR0.psr.raw = ((struct LPTMR_PSR){
+     f80:	4b09      	ldr	r3, [pc, #36]	; (fa8 <main+0x34>)
+     f82:	2205      	movs	r2, #5
+     f84:	605a      	str	r2, [r3, #4]
+                        .prescale = 0,
+                                .pbyp = 1,
+                                .pcs = LPTMR_PCS_LPO
+                                }).raw;
+        LPTMR0.csr.raw = ((struct LPTMR_CSR){
+     f86:	2284      	movs	r2, #132	; 0x84
+     f88:	601a      	str	r2, [r3, #0]
+}
+
+void
+int_enable(size_t intno)
+{
+        NVIC.iser[intno / 32] = 1 << (intno % 32);
+     f8a:	4b08      	ldr	r3, [pc, #32]	; (fac <main+0x38>)
+     f8c:	2280      	movs	r2, #128	; 0x80
+	timeout_init();
+	/* blink will also setup a timer to itself */
+	blink(NULL);
+     f8e:	2000      	movs	r0, #0
+     f90:	605a      	str	r2, [r3, #4]
+     f92:	f7ff ffa3 	bl	edc <blink.4624.4024>
+}
+
+void __attribute__((noreturn))
+sys_yield_for_frogs(void)
+{
+        SCB.scr.sleeponexit = 1;
+     f96:	4a06      	ldr	r2, [pc, #24]	; (fb0 <main+0x3c>)
+     f98:	6913      	ldr	r3, [r2, #16]
+     f9a:	f043 0302 	orr.w	r3, r3, #2
+     f9e:	6113      	str	r3, [r2, #16]
+        for (;;)
+                __asm__("wfi");
+     fa0:	bf30      	wfi
+     fa2:	e7fd      	b.n	fa0 <main+0x2c>
+     fa4:	40048020 	.word	0x40048020
+     fa8:	40040000 	.word	0x40040000
+     fac:	e000e100 	.word	0xe000e100
+     fb0:	e000ed00 	.word	0xe000ed00
+
+00000fb4 <Default_Reset_Handler.4027>:
+
+void
+Default_Reset_Handler(void)
+{
+	/* Disable Watchdog */
+	WDOG_UNLOCK = 0xc520;
+     fb4:	4a16      	ldr	r2, [pc, #88]	; (1010 <Default_Reset_Handler.4027+0x5c>)
+                        .dmx32 = 1
+                }).raw;
+        SIM.sopt2.pllfllsel = SIM_PLLFLLSEL_FLL;
+#endif
+
+        memcpy(&_sdata, &_sidata, (uintptr_t)&_edata - (uintptr_t)&_sdata);
+     fb6:	4917      	ldr	r1, [pc, #92]	; (1014 <Default_Reset_Handler.4027+0x60>)
+{
+	char *dstbuf = dst;
+	const char *srcbuf = src;
+
+	for (; len > 0; --len, ++dstbuf, ++srcbuf)
+		*dstbuf = *srcbuf;
+     fb8:	4817      	ldr	r0, [pc, #92]	; (1018 <Default_Reset_Handler.4027+0x64>)
+
+void main(void);
+
+void
+Default_Reset_Handler(void)
+{
+     fba:	b508      	push	{r3, lr}
+	/* Disable Watchdog */
+	WDOG_UNLOCK = 0xc520;
+     fbc:	f24c 5320 	movw	r3, #50464	; 0xc520
+     fc0:	81d3      	strh	r3, [r2, #14]
+	WDOG_UNLOCK = 0xd928;
+     fc2:	f64d 1328 	movw	r3, #55592	; 0xd928
+     fc6:	81d3      	strh	r3, [r2, #14]
+	WDOG_STCTRLH &= ~WDOG_STCTRLH_WDOGEN_MASK;
+     fc8:	8813      	ldrh	r3, [r2, #0]
+     fca:	f023 0301 	bic.w	r3, r3, #1
+     fce:	041b      	lsls	r3, r3, #16
+     fd0:	0c1b      	lsrs	r3, r3, #16
+     fd2:	8013      	strh	r3, [r2, #0]
+                /* NOTHING */;
+
+        SIM.sopt2.pllfllsel = SIM_PLLFLLSEL_PLL;
+#else
+        /* FLL at 48MHz */
+        MCG.c4.raw = ((struct MCG_C4_t){
+     fd4:	4b11      	ldr	r3, [pc, #68]	; (101c <Default_Reset_Handler.4027+0x68>)
+     fd6:	22a0      	movs	r2, #160	; 0xa0
+     fd8:	70da      	strb	r2, [r3, #3]
+                        .drst_drs = MCG_DRST_DRS_MID,
+                        .dmx32 = 1
+                }).raw;
+        SIM.sopt2.pllfllsel = SIM_PLLFLLSEL_FLL;
+     fda:	4b11      	ldr	r3, [pc, #68]	; (1020 <Default_Reset_Handler.4027+0x6c>)
+     fdc:	685a      	ldr	r2, [r3, #4]
+     fde:	f36f 4210 	bfc	r2, #16, #1
+     fe2:	605a      	str	r2, [r3, #4]
+#endif
+
+        memcpy(&_sdata, &_sidata, (uintptr_t)&_edata - (uintptr_t)&_sdata);
+     fe4:	4a0f      	ldr	r2, [pc, #60]	; (1024 <Default_Reset_Handler.4027+0x70>)
+     fe6:	2300      	movs	r3, #0
+     fe8:	1a89      	subs	r1, r1, r2
+     fea:	e002      	b.n	ff2 <Default_Reset_Handler.4027+0x3e>
+     fec:	5c1c      	ldrb	r4, [r3, r0]
+     fee:	549c      	strb	r4, [r3, r2]
+     ff0:	3301      	adds	r3, #1
+memcpy(void *dst, const void *src, size_t len)
+{
+	char *dstbuf = dst;
+	const char *srcbuf = src;
+
+	for (; len > 0; --len, ++dstbuf, ++srcbuf)
+     ff2:	428b      	cmp	r3, r1
+     ff4:	d1fa      	bne.n	fec <Default_Reset_Handler.4027+0x38>
+        memset(&_sbss, 0, (uintptr_t)&_ebss - (uintptr_t)&_sbss);
+     ff6:	4a0c      	ldr	r2, [pc, #48]	; (1028 <Default_Reset_Handler.4027+0x74>)
+     ff8:	490c      	ldr	r1, [pc, #48]	; (102c <Default_Reset_Handler.4027+0x78>)
+     ffa:	2300      	movs	r3, #0
+     ffc:	1a89      	subs	r1, r1, r2
+memset(void *addr, int val, size_t len)
+{
+	char *buf = addr;
+
+	for (; len > 0; --len, ++buf)
+		*buf = val;
+     ffe:	4618      	mov	r0, r3
+    1000:	e001      	b.n	1006 <Default_Reset_Handler.4027+0x52>
+    1002:	54d0      	strb	r0, [r2, r3]
+    1004:	3301      	adds	r3, #1
+void *
+memset(void *addr, int val, size_t len)
+{
+	char *buf = addr;
+
+	for (; len > 0; --len, ++buf)
+    1006:	428b      	cmp	r3, r1
+    1008:	d1fb      	bne.n	1002 <Default_Reset_Handler.4027+0x4e>
+
+        main();
+    100a:	f7ff ffb3 	bl	f74 <main>
+    100e:	bf00      	nop
+    1010:	40052000 	.word	0x40052000
+    1014:	1ffff02c 	.word	0x1ffff02c
+    1018:	000010d4 	.word	0x000010d4
+    101c:	40064000 	.word	0x40064000
+    1020:	40048000 	.word	0x40048000
+    1024:	1ffff02c 	.word	0x1ffff02c
+    1028:	1ffff000 	.word	0x1ffff000
+    102c:	1ffff02c 	.word	0x1ffff02c
+
+00001030 <memset>:
+    1030:	b4f0      	push	{r4, r5, r6, r7}
+    1032:	0784      	lsls	r4, r0, #30
+    1034:	d04b      	beq.n	10ce <memset+0x9e>
+    1036:	1e54      	subs	r4, r2, #1
+    1038:	2a00      	cmp	r2, #0
+    103a:	d046      	beq.n	10ca <memset+0x9a>
+    103c:	b2cd      	uxtb	r5, r1
+    103e:	1c43      	adds	r3, r0, #1
+    1040:	e004      	b.n	104c <memset+0x1c>
+    1042:	3301      	adds	r3, #1
+    1044:	1e62      	subs	r2, r4, #1
+    1046:	2c00      	cmp	r4, #0
+    1048:	d03f      	beq.n	10ca <memset+0x9a>
+    104a:	4614      	mov	r4, r2
+    104c:	079a      	lsls	r2, r3, #30
+    104e:	f803 5c01 	strb.w	r5, [r3, #-1]
+    1052:	461e      	mov	r6, r3
+    1054:	d1f5      	bne.n	1042 <memset+0x12>
+    1056:	2c03      	cmp	r4, #3
+    1058:	d92d      	bls.n	10b6 <memset+0x86>
+    105a:	b2cd      	uxtb	r5, r1
+    105c:	2c0f      	cmp	r4, #15
+    105e:	ea45 2505 	orr.w	r5, r5, r5, lsl #8
+    1062:	ea45 4505 	orr.w	r5, r5, r5, lsl #16
+    1066:	bf84      	itt	hi
+    1068:	4632      	movhi	r2, r6
+    106a:	4623      	movhi	r3, r4
+    106c:	d912      	bls.n	1094 <memset+0x64>
+    106e:	3b10      	subs	r3, #16
+    1070:	2b0f      	cmp	r3, #15
+    1072:	6015      	str	r5, [r2, #0]
+    1074:	6055      	str	r5, [r2, #4]
+    1076:	6095      	str	r5, [r2, #8]
+    1078:	60d5      	str	r5, [r2, #12]
+    107a:	f102 0210 	add.w	r2, r2, #16
+    107e:	d8f6      	bhi.n	106e <memset+0x3e>
+    1080:	f1a4 0310 	sub.w	r3, r4, #16
+    1084:	f023 030f 	bic.w	r3, r3, #15
+    1088:	f004 040f 	and.w	r4, r4, #15
+    108c:	3310      	adds	r3, #16
+    108e:	2c03      	cmp	r4, #3
+    1090:	441e      	add	r6, r3
+    1092:	d910      	bls.n	10b6 <memset+0x86>
+    1094:	1f27      	subs	r7, r4, #4
+    1096:	08bf      	lsrs	r7, r7, #2
+    1098:	f106 0208 	add.w	r2, r6, #8
+    109c:	eb02 0287 	add.w	r2, r2, r7, lsl #2
+    10a0:	1d33      	adds	r3, r6, #4
+    10a2:	f843 5c04 	str.w	r5, [r3, #-4]
+    10a6:	3304      	adds	r3, #4
+    10a8:	4293      	cmp	r3, r2
+    10aa:	d1fa      	bne.n	10a2 <memset+0x72>
+    10ac:	3701      	adds	r7, #1
+    10ae:	eb06 0687 	add.w	r6, r6, r7, lsl #2
+    10b2:	f004 0403 	and.w	r4, r4, #3
+    10b6:	b144      	cbz	r4, 10ca <memset+0x9a>
+    10b8:	3401      	adds	r4, #1
+    10ba:	1934      	adds	r4, r6, r4
+    10bc:	b2c9      	uxtb	r1, r1
+    10be:	1c73      	adds	r3, r6, #1
+    10c0:	f803 1c01 	strb.w	r1, [r3, #-1]
+    10c4:	3301      	adds	r3, #1
+    10c6:	42a3      	cmp	r3, r4
+    10c8:	d1fa      	bne.n	10c0 <memset+0x90>
+    10ca:	bcf0      	pop	{r4, r5, r6, r7}
+    10cc:	4770      	bx	lr
+    10ce:	4614      	mov	r4, r2
+    10d0:	4606      	mov	r6, r0
+    10d2:	e7c0      	b.n	1056 <memset+0x26>

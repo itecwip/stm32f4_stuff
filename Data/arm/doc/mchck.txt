@@ -1,0 +1,123 @@
+https://mchck.org/
+
+Quick Specs
+
+Dimensions	50mm x 20mm
+Platform	ARM Cortex-M4 (DSP, no FPU)
+MCU		Freescale MK20DX32VLF5: 8KB RAM, 32KB program flash + 32KB data flash
+Interface	USB, I2C, SPI, UART, I2S
+Programming	via USB bootloader
+Debugging	A second MC HCK can be used as debug adapter
+Board options	mounting hole, LiPo charger, nRF24L01+ directly pluggable, up to 8Mbit flash, LDO, buck regulator, boost regulator, RTC crystal 
+
+https://github.com/mchck/mchck/wiki/Getting-Started
+
+
+Links
+http://bgamari.github.io/posts/getting-started-with-mchck.html
+
+Installation de la toolchain mchck/summon-arm-toolchain
+
+1) installer via sbo la librairie libftdi.
+libftdi-0.20-i486-1_SBo.tgz
+
+2)
+$ git clone https://github.com/esden/summon-arm-toolchain.git
+$ cd summon-arm-toolchain
+$ ./summon-arm-toolchain
+
+3)
+$ cd mkchk/examples/blink
+$ make
+
+Now you have a blink.bin image ready to be uploaded to the mkchk. 
+
+------------------------------------------------------------------------------------------
+
+make du openocd-0.6.1:
+Erreur si pas de librairie libftdi:
+checking Build & Link with libftdi...... configure: error: Cannot build & run test program using libftdi
+-> installer libftdi
+
+Erreur dans libopencm3:
+
+  BUILD   lib/stm32/f7
+Makefile:60: Your toolchain doesn't support -mcpu=cortex-m7.
+Please use gcc-arm-embedded 4.8 2014q3 or newer. Skipping this sub-library.
+  BUILD   lib/stm32/l0
+  CP      libopencm3_stm32l0.ld
+  CC      gpio.c
+arm-none-eabi-gcc: error: unrecognized argument in option '-mcpu=cortex-m0plus'
+arm-none-eabi-gcc: note: valid arguments to '-mcpu=' are: arm1020e arm1020t arm1022e arm1026ej-s arm10e arm10tdmi arm1136j-s arm1136jf-s arm1156t2-s arm1156t2f-s arm1176jz-s arm1176jzf-s arm2 arm250 arm3 arm6 arm60 arm600 arm610 arm620 arm7 arm70 arm700 arm700i arm710 arm7100 arm710c arm710t arm720 arm720t arm740t arm7500 arm7500fe arm7d arm7di arm7dm arm7dmi arm7m arm7tdmi arm7tdmi-s arm8 arm810 arm9 arm920 arm920t arm922t arm926ej-s arm940t arm946e-s arm966e-s arm968e-s arm9e arm9tdmi cortex-a15 cortex-a5 cortex-a7 cortex-a8 cortex-a9 cortex-m0 cortex-m1 cortex-m3 cortex-m4 cortex-r4 cortex-r4f cortex-r5 ep9312 fa526 fa606te fa626 fa626te fa726te fmp626 generic-armv7-a iwmmxt iwmmxt2 mpcore mpcorenovfp native strongarm strongarm110 strongarm1100 strongarm1110 xscale
+make[1]: *** [gpio.o] Error 1
+make: *** [lib/stm32/l0] Error 2
+root[summon-arm-toolchain]# 
+
+Modification du Makefile de libopencm3
+
+cd mchck/summon-arm-toolchain/sources
+bzip2 -d libopencm3-2eade079a99c2ea6ccb9c355b66102a9b1452934.tar
+tar xvf libopencm3-2eade079a99c2ea6ccb9c355b66102a9b1452934.tar
+cd libopencm3-2eade079a99c2ea6ccb9c355b66102a9b1452934
+vi Makefile
+-> suppression des targets : stm32/f7, stm32/l0
+-> Suppression des répertoires: lib/stm32/f7 et lib/stm32/l0
+
+-> regeneration du package libopencm3-2eade079a99c2ea6ccb9c355b66102a9b1452934.tar.bz2
+
+tar cvf libopencm3-2eade079a99c2ea6ccb9c355b66102a9b1452934
+bzip2 -z libopencm3-2eade079a99c2ea6ccb9c355b66102a9b1452934.tar
+
+-----------
+Erreur dans les examples:
+
+/home/nicolas/dev/mchck/toolchain/lib/usb/gen-desc/dsl.rb:103: warning: already initialized constant Parent
+main-kinetis.c: In function 'new_data':
+main-kinetis.c:15:5: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'uint32_t' [-Wformat]
+
+/home/nicolas/dev/mchck/toolchain/lib/usb/gen-desc/dsl.rb:103: warning: already initialized constant Parent
+
+In function 'main':
+lto1: internal compiler error: Segmentation fault
+Please submit a full bug report,
+with preprocessed source if appropriate.
+See <http://gcc.gnu.org/bugs.html> for instructions.
+lto-wrapper: arm-none-eabi-gcc returned 1 exit status
+collect2: error: lto-wrapper returned 1 exit status
+make: *** [ftm.elf] Error 1
+
+null_loader.c: In function 'Reset_Handler':
+null_loader.c:11:2: warning: implicit declaration of function '__set_MSP' [-Wimplicit-function-declaration]
+null_loader.o: In function `Reset_Handler':
+/home/nicolas/dev/mchck/examples/null_loader/null_loader.c:11: undefined reference to `__set_MSP'
+collect2: error: ld returned 1 exit status
+make: *** [null_loader.elf] Error 1
+
+pmtest.c: In function 'set_sleepdeep':
+pmtest.c:96:23: warning: unused variable 'unused' [-Wunused-variable]
+
+/home/nicolas/dev/mchck/toolchain/lib/usb/gen-desc/dsl.rb:103: warning: already initialized constant Parent
+read-temp.c: In function 'temp_done':
+read-temp.c:18:9: warning: unknown conversion type character 'k' in format [-Wformat]
+read-temp.c:18:9: warning: too many arguments for format [-Wformat-extra-args]
+/home/nicolas/dev/sat/bin/../lib/gcc/arm-none-eabi/4.7.3/thumb/cortex-m4/libgcc.a(unwind-arm.o): In function `get_eit_entry':
+/home/git-repo/summon-arm-toolchain/build/arm-none-eabi/thumb/cortex-m4/libgcc/../../../../../gcc-linaro-4.7-2013.01/libgcc/unwind-arm-common.inc:221: undefined reference to `__exidx_end'
+/home/git-repo/summon-arm-toolchain/build/arm-none-eabi/thumb/cortex-m4/libgcc/../../../../../gcc-linaro-4.7-2013.01/libgcc/unwind-arm-common.inc:221: undefined reference to `__exidx_start'
+/home/nicolas/dev/sat/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/thumb/cortex-m4/libg.a(lib_a-abort.o): In function `abort':
+/home/git-repo/summon-arm-toolchain/build/arm-none-eabi/thumb/cortex-m4/newlib/libc/stdlib/../../../../../../../gcc-linaro-4.7-2013.01/newlib/libc/stdlib/abort.c:63: undefined reference to `_exit'
+/home/nicolas/dev/sat/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/thumb/cortex-m4/libg.a(lib_a-signalr.o): In function `_kill_r':
+/home/git-repo/summon-arm-toolchain/build/arm-none-eabi/thumb/cortex-m4/newlib/libc/reent/../../../../../../../gcc-linaro-4.7-2013.01/newlib/libc/reent/signalr.c:61: undefined reference to `_kill'
+/home/nicolas/dev/sat/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/thumb/cortex-m4/libg.a(lib_a-signalr.o): In function `_getpid_r':
+/home/git-repo/summon-arm-toolchain/build/arm-none-eabi/thumb/cortex-m4/newlib/libc/reent/../../../../../../../gcc-linaro-4.7-2013.01/newlib/libc/reent/signalr.c:96: undefined reference to `_getpid'
+/home/nicolas/dev/sat/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/thumb/cortex-m4/libg.a(lib_a-sbrkr.o): In function `_sbrk_r':
+/home/git-repo/summon-arm-toolchain/build/arm-none-eabi/thumb/cortex-m4/newlib/libc/reent/../../../../../../../gcc-linaro-4.7-2013.01/newlib/libc/reent/sbrkr.c:58: undefined reference to `_sbrk'
+collect2: error: ld returned 1 exit status
+make: *** [read-temp.elf] Error 1
+
+Erreur dans les bootloader:
+
+/home/nicolas/dev/mchck/toolchain/lib/usb/gen-desc/dsl.rb:103: warning: already initialized constant Parent
+bootloader-update-dfu.c:12:1: warning: 'onboard_led_morse_raw' defined but not used [-Wunused-function]
+
+
+
