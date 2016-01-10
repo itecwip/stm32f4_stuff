@@ -1,0 +1,42 @@
+Arduino mini-oscilloscope 
+https://www.youtube.com/watch?v=XHDNXXhg3Hg
+http://www.iforce2d.net/arduinoOscilloscope.txt
+
+http://www.x-io.co.uk/serial-oscilloscope/
+https://github.com/xioTechnologies/Serial-Oscilloscope
+
+http://www.miupanel.com/Examples-Products/Arduino-UNO-Examples/Arduino-Advanced-Oscilloscope
+http://bobdavis321.blogspot.fr/2013/06/arduino-powered-3-million-samples-per.html
+
+https://prototalk.wordpress.com/2012/11/03/prototalk-the-alto-scope/?preview=true&preview_id=6&preview_nonce=ff5e3af845
+http://www.elektronika.kvalitne.cz/foto/DSO_32.html
+
+--
+Oscilloscope:
+http://tomeko.net/miniscope_v2d/
+http://ebrombaugh.studionebula.com/embedded/stm32f303breakout/index.html
+https://oshpark.com/shared_projects/yOwIXs9p
+
+https://github.com/kcuzner/teensy-oscilloscope
+
+Linux+Arduino open oscilloscope – Lxardoscope
+
+http://www.elecfreaks.com/2042.html
+http://www.elecfreaks.com/2110.html	shield DDS-AD9850
+https://blog-du-grouik.tinad.fr/post/2014/02/18/Un-oscilloscope-arduino
+
+http://www.instructables.com/id/Arduino-Oscilloscope-poor-mans-Oscilloscope/
+http://www.instructables.com/id/Arduino-Improved-Poor-Mans-Oscilloscope/
+https://gist.github.com/chrismeyersfsu/3270358#file-gistfile1-c
+https://github.com/processing/processing
+
+http://www.instructables.com/id/Arduino-High-speed-Oscilloscope-with-PC-interface/
+
+Arduino + LM324
+http://www.instructables.com/id/Girino-Fast-Arduino-Oscilloscope/
+https://hackaday.io/project/5881-small-scope
+https://github.com/marvin-sinister/small-scope
+https://github.com/marvin-sinister/small-scope-electronics
+https://github.com/marvin-sinister/small-scope-qt
+
+http://accrochages.drone.ws/en/node/90
