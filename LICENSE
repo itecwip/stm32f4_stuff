@@ -1,1 +1,68 @@
 GNU GENERAL PUBLIC LICENSE
+
+with stm32VLDiscovery_HelloWorldRAM:
+
+copy gpio.h and gpio.c.
+copy hdr_gpio.h into gpio.h.
+
+https://github.com/FreddieChopin/ARM-example-projects/tree/stm32f1x_blink_led
+http://tidroe.net/stm32f103-bare-metal/gpio/
+https://github.com/honnet/STM32_board_bringup/blob/master/challenge2011/button.c
+
+gpio usage via stm32f10x.h:
+
+// Configuration for port 0 to 7
+GPIO_CRL_MODE[0-7]		= MODE[11]	->  ~(GPIO_CRL_MODE[0-7]) = MODE[00]
+GPIO_CRL_MODE[0-7]_0	= MODE[01]
+GPIO_CRL_MODE[0-7]_1	= MODE[10]
+
+GPIO_CRL_CNF[0-7]		= CNF[11]	->  ~(GPIO_CRL_CNF[0-7]) = CNF[00]
+GPIO_CRL_CNF[0-7]_0		= CNF[01]
+GPIO_CRL_CNF[0-7]_1		= CNF[10]
+
+// Configuration for port 8 to 15
+GPIO_CRH_MODE[8-15]		= MODE[11]	->  ~(GPIO_CRH_MODE[0-7]) = MODE[00]
+GPIO_CRH_MODE[8-15]_0	= MODE[01]
+GPIO_CRH_MODE[8-15]_1	= MODE[10]
+
+GPIO_CRH_CNF[8-15]		= CNF[11]	->  ~(GPIO_CRH_CNF[0-7]) = CNF[00]
+GPIO_CRH_CNF[8-15]_0	= CNF[01]
+GPIO_CRH_CNF[8-15]_1	= CNF[10]
+
+if (MODE[00]) {
+	Input mode (reset state) 
+	CNF[00]  Analog mode
+	CNF[01]  Floating input (reset state)
+	CNF[10]  Input with pull-up / pull-down
+	CNF[11]  Reserved (not used)
+} else {
+	MODE[01] Output mode, max speed 10 MHz.
+	MODE[10] Output mode, max speed 2 MHz.
+	MODE[11] Output mode, max speed 50 MHz.
+	CNF[00]  General purpose output push-pull
+	CNF[01]  General purpose output Open-drain
+	CNF[10]  Alternate function output Push-pull
+	CNF[11]  Reserved (not used)
+}
+
+Example:
+// Setup PC13 (led) in output push-pull at 50 MHz
+// clear the MODE and CNF fields of port 13 (CNF13[00]- MODE13[00] : Input mode, Analog Mode)
+GPIOC->CRH &= ~(GPIO_CRH_MODE13 | GPIO_CRH_CNF13);
+// Output push-pull, Output mode, max speed 50 MHz. (CNF13[00] - MODE13[11])
+GPIOC->CRH |= GPIO_CRH_MODE13;
+
+// Bit set on PC13
+#define LED_ON		(GPIOC->BSRR = GPIO_BSRR_BS13)
+// Bit reset on PC13
+#define LED_OFF		(GPIOC->BSRR = GPIO_BSRR_BR13)
+
+
+// Port PC13 input pull-up (button)
+// clear the MODE and CNF fields of port 13 (CNF13[00]- MODE13[00] : Input mode, Analog Mode)
+GPIOC->CRH &= ~(GPIO_CRH_CNF13 | GPIO_CRH_MODE13);
+// Input with pull-up / pull-down (CNF13[10])
+GPIOC->CRH |= GPIO_CRH_CNF13_1;
+GPIOC->BSRR = GPIO_BSRR_BS13; // set input in pull-up mode 
+or
+GPIOC->BSRR = GPIO_BSRR_BR13; // set input in pull-down mode 
