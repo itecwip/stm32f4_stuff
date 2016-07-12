@@ -1,0 +1,67 @@
+Module                  Size  Used by
+ext4                  406219  1 
+jbd2                   65536  1 ext4
+nls_utf8                 992  1 
+isofs                  28424  1 
+ipv6                  246794  20 
+lp                      7199  0 
+fuse                   65066  3 
+snd_hda_codec_realtek    30084  1 
+snd_hda_codec_hdmi     26494  1 
+amd_freq_sensitivity     1016  0 
+cpufreq_ondemand        7199  1 amd_freq_sensitivity
+acpi_cpufreq            6310  0 
+mperf                    919  1 acpi_cpufreq
+snd_hda_intel          29700  1 
+ehci_pci                2980  0 
+processor              24543  5 acpi_cpufreq
+ehci_hcd               34699  1 ehci_pci
+snd_hda_codec         123925  3 snd_hda_codec_realtek,snd_hda_codec_hdmi,snd_hda_intel
+eeepc_wmi               4032  0 
+asus_wmi               13530  1 eeepc_wmi
+sparse_keymap           2542  1 asus_wmi
+rfkill                 12610  1 asus_wmi
+video                  10142  1 asus_wmi
+snd_hwdep               4738  1 snd_hda_codec
+kvm_amd                44875  0 
+fam15h_power            2192  0 
+evdev                   7552  6 
+thermal_sys            19013  2 video,processor
+snd_pcm                62870  3 snd_hda_codec_hdmi,snd_hda_codec,snd_hda_intel
+freq_table              2176  4 cpufreq_ondemand,amd_freq_sensitivity,acpi_cpufreq,thermal_sys
+kvm                   311379  1 kvm_amd
+snd_page_alloc          6062  2 snd_pcm,snd_hda_intel
+button                  3704  0 
+k10temp                 2266  0 
+ppdev                   4710  0 
+crc32_pclmul            2365  0 
+crc32c_intel            1447  0 
+snd_timer              14870  1 snd_pcm
+i2c_dev                 4551  0 
+i2c_piix4               7663  0 
+wmi                     7059  1 asus_wmi
+psmouse                72582  0 
+serio_raw               3545  0 
+parport_pc             16728  1 
+parport                25305  3 lp,ppdev,parport_pc
+snd                    44159  9 snd_hda_codec_realtek,snd_hwdep,snd_timer,snd_hda_codec_hdmi,snd_pcm,snd_hda_codec,snd_hda_intel
+microcode               8880  0 
+r8169                  51572  0 
+soundcore               4318  1 snd
+mii                     3335  1 r8169
+loop                   14786  0 
+radeon                748503  0 
+ttm                    47020  1 radeon
+drm_kms_helper         31358  1 radeon
+drm                   186279  3 ttm,drm_kms_helper,radeon
+agpgart                22075  2 drm,ttm
+hwmon                   1021  5 fam15h_power,k10temp,radeon,thermal_sys,asus_wmi
+i2c_algo_bit            4575  1 radeon
+i2c_core               17388  6 drm,i2c_dev,i2c_piix4,drm_kms_helper,i2c_algo_bit,radeon
+ext2                   54951  1 
+mbcache                 4250  2 ext2,ext4
+xhci_hcd               79335  0 
+ohci_hcd               20924  0 
+hid_generic              741  0 
+usbhid                 32543  0 
+hid                    70283  2 hid_generic,usbhid

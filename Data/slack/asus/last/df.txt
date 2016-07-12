@@ -1,0 +1,5 @@
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda4       208G   12G  186G   7% /
+tmpfs           1.6G     0  1.6G   0% /dev/shm
+/dev/sr0        699M  699M     0 100% /run/media/nicolas/LIVESLAK
+/dev/sda3       246G   27G  207G  12% /run/media/nicolas/b771abd9-a79b-4b3f-95b7-c8273c7edbdf

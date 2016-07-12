@@ -1,0 +1,27 @@
+#History lists
+
+[path_list]
+"/home/nicolas"
+"/home/nicolas/Pictures"
+
+[print_settings]
+"save_settings[INT]:1"
+"output[INT]:0"
+"dpi[DOUBLE]:300"
+"units[INT]:3"
+"size[INT]:1"
+"orientation[INT]:0"
+"margin_left[DOUBLE]:36"
+"margin_right[DOUBLE]:36"
+"margin_top[DOUBLE]:36"
+"margin_bottom[DOUBLE]:36"
+"text[INT]:1"
+"textsize[INT]:10"
+"textcolor_r[INT]:0"
+"textcolor_g[INT]:0"
+"textcolor_b[INT]:0"
+"source[INT]:1"
+"layout[INT]:0"
+"image_scale[DOUBLE]:100"
+
+#end

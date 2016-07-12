@@ -1,0 +1,49 @@
+#!/bin/sh
+#
+# fluxbox startup-script:
+
+# Change your keymap:
+xmodmap "~/.Xmodmap"
+
+# Applications you want to run with fluxbox.
+# MAKE SURE THAT APPS THAT KEEP RUNNING HAVE AN ''&'' AT THE END.
+#
+
+# Start DBUS session bus:
+if [ -z "\$DBUS_SESSION_BUS_ADDRESS" ]; then
+   dbus-launch --sh-syntax --exit-with-session
+fi
+
+(sleep 1 && [ -x /usr/bin/pcmanfm ] && dbus-launch pcmanfm --desktop) &
+
+#([ -x /usr/bin/batti ] && dbus-launch batti) &
+
+([ -x /usr/bin/xdg-user-dirs-update ] && xdg-user-dirs-update) &
+
+(sleep 1 && [ -x /usr/bin/parcellite ] && parcellite) &
+
+# [ -x /usr/bin/wicd-gtk ] && wicd-gtk --tray &
+
+[ -x /usr/bin/volumeicon ] && volumeicon &
+
+(setxkbmap -query | grep "^layout:" | sed "s/^layout: *//" | grep -q "," && [ -x /usr/bin/fbxkb ] && fbxkb) &
+
+[ -x /usr/bin/fbsetbg ] && fbsetbg -l 
+
+#[ -x /usr/bin/salix-update-notifier ] && salix-update-notifier &
+#(sleep 1 && [ -x /usr/bin/spacefm ] && spacefm --desktop) &
+#([ -x /usr/bin/spacefm ] && spacefm --set-wallpaper /usr/share/xfce4/backdrops/tentacles.png) &
+#([ -x /usr/bin/conky ] && conky) &
+
+(sleep 4 && [ -x /usr/bin/fbpanel ] && fbpanel) &
+
+(sleep 9 && [ -x /usr/bin/xscreensaver ] && xscreensaver -nosplash) &
+
+# And last but not least we start fluxbox.
+# Because it is the last app you have to run it with ''exec'' before it.
+
+exec fluxbox
+
+#exec ck-launch-session dbus-launch fluxbox
+# or if you want to keep a log:
+# exec fluxbox -log "~/.fluxbox/log"

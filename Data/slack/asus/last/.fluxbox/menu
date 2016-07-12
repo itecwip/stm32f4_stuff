@@ -1,0 +1,111 @@
+[begin] (.: Slackel :.)
+		[exec] (Terminal) {lxterminal} 
+		[exec] (File Manager) {pcmanfm}
+		[exec] (Web Browser) {firefox} 
+		[separator]
+		[exec] (Run Program...) {gmrun}
+		[separator]
+	[submenu] (Accessories)
+		[exec] (Archive Manager) {engrampa}
+		[exec] (Character Map) {gucharmap}
+		[exec] (Galculator) {galculator}
+		[exec] (GNU Privacy Assistant) {gpa}
+		[exec] (GTKMan) {gtkman}
+		[exec] (Leafpad) {leafpad}
+		[exec] (Parcellite) {parcellite}
+		[exec] (File Manager) {pcmanfm}
+		[exec] (Terminal) {lxterminal}
+	[end]
+	[submenu] (Development) 
+		[exec] (Geany) {geany}
+	[end]
+	[submenu] (Graphics) 
+		[exec] (Atril Document Viewer) {atril}
+		[exec] (Simple Scan) {simple-scan}
+		[exec] (The Gimp) {gimp}
+		[exec] (Viewnior) {viewnior}
+	[end]
+	[submenu] (Multimedia) 
+		[exec] (Asunder CD Ripper) {asunder}
+		[exec] (Brasero Disc Burning) {brasero}
+		[exec] (Exaile) {exaile}
+		[exec] (Install multimedia codecs) {gksu salix-codecs-installer-gtk}
+		[exec] (Mixer) {mate-volume-control}
+		[exec] (Whaawmp) {whaawmp}
+	[end]
+	[submenu] (Network) 
+		[exec] (Claws Mail) {claws-mail}
+		[exec] (Web Browser) {firefox}
+		[exec] (Pidgin Internet Messenger) {pidgin}
+		[exec] (Transmission) {transmission-gtk}
+		[exec] (Wicd Network Manager) {wicd-gtk --no-tray}
+		[exec] (gFTP) {gftp}
+	[end]
+	[submenu] (Office) 
+		[exec] (Abiword) {abiword} 
+		[exec] (Gnumeric) {gnumeric}
+	[end]
+	[submenu] (System) 
+		[exec] (ALSA sound card) {gksu gtkalsasetup}
+		[exec] (Dotnew) {gksu dotnew-gtk}
+		[exec] (GDM Setup) {gksu gdmsetup}
+		[exec] (Gslapt Package Manager) {gksu /usr/sbin/gslapt}
+		[exec] (Hostnames) {gksu gtkhostsetup}
+		[exec] (Htop) {htop}
+		[exec] (Keyboard) {gksu gtkkeyboardsetup}
+		[exec] (Lilo Setup) {gksu /usr/sbin/lilosetup.py}
+		[exec] (Lock Screen) {xscreensaver-command -lock}
+		[exec] (Manage Printing) {/usr/bin/xdg-open http://localhost:631}
+		[exec] (Print Settings) {/usr/share/system-config-printer/system-config-printer.py}
+		[exec] (Monitor configuration tool) {lxrandr}
+		[exec] (Ndiswrapper Wireless Drivers) {gksu /usr/sbin/ndisgtk}
+		[exec] (New Login in a Window) {gdmflexiserver -n}
+		[exec] (Pop-Up Notifications) {mate-notification-properties}
+		[exec] (Rebuild icon cache) {gksu gtkiconrefresh}
+		[exec] (Sourcery SlackBuild Manager) {gksu sourcery}
+		[exec] (System clock) {gksu gtkclocksetup}
+		[exec] (System language) {gksu gtklocalesetup}
+		[exec] (System services) {gksu gtkservicesetup}
+		[exec] (Screensaver) {xscreensaver-demo}
+		[exec] (Users and groups) {gksu gtkusersetup}
+	[end]
+		[separator]
+	[submenu] (Slackel)
+		[exec] (Start Page) {xdg-open http://www.slackel.gr}
+		[exec] (Home Page) {xdg-open http://www.slackel.gr}
+		[exec] (Forum) {xdg-open http://www.slackel.gr/slackelmulti/xoops20171/htdocs/modules/newbb/}
+	[end]
+		[separator]
+		[include] (~/.fluxbox/xdg_menu)
+		[separator]
+	[submenu] (FluxBox) 
+		[workspaces] (Workspaces)
+		[submenu] (Tools)
+      			[exec] (Screenshot) {scrot -e}
+      			[exec] (Screenshot - delay 5) {scrot -d5 -e}
+		[end]
+		[submenu] (Styles)
+			[stylesdir] (/usr/X11/share/fluxbox/styles)
+			[stylesdir] (~/.fluxbox/styles)
+		[end]
+		[submenu] (Backgrounds)
+			[wallpapers] (~/.fluxbox/backgrounds)
+			[wallpapers] (/usr/share/xfce4/backdrops)
+		[end]
+		[config] (Configure)
+		[exec] (About) {fluxbox -info | zenity --title 'About Fluxbox' --text-info}
+		[reconfigure] (Reconfig) 
+		[restart] (Restart)
+		[end]
+		[separator]
+	[submenu] (Exit)
+		[exec] (Shutdown) {dbus-send --system --print-reply --dest="org.freedesktop.ConsoleKit" /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop}
+		[exec] (Reboot) {dbus-send --system --print-reply --dest="org.freedesktop.ConsoleKit" /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart}
+		[exec] (Hibernate) {dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Hibernate}
+		[exec] (Suspend) {dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Suspend}		
+		[separator]
+		[exec] (Switch User) {gdmflexiserver}
+		[exit] (Log out)
+		[end] 
+	[end]
+[end]

@@ -1,0 +1,94 @@
+[submenu] (Applications) </usr/share/icons/mate/16x16/categories/applications-other.png>
+  [submenu] (Accessories) </usr/share/icons/mate-colors-common/16x16/categories/applications-accessories.png>
+    [exec] (Application Finder) {xfce4-appfinder} </usr/share/icons/mate-colors-common/16x16/actions/gtk-find.png>
+    [exec] (Character Map) {gucharmap} </usr/share/icons/mate/16x16/apps/accessories-character-map.png>
+    [exec] (GTKMan Manual Page Viewer) {gtkman salix} </usr/share/icons/hicolor/16x16/apps/gtkman.png>
+    [exec] (Leafpad) {leafpad } </usr/share/icons/hicolor/16x16/apps/leafpad.png>
+    [exec] (SCIM (Smart Common Input Method\) startup) {scim -d} </usr/share/pixmaps/scim-setup.png>
+    [exec] (Screenshot) {xfce4-screenshooter} </usr/share/icons/mate-colors-common/16x16/devices/applets-screenshooter.png>
+    [exec] (gpa) {gpa} </usr/share/pixmaps/gpa.png>
+  [end] # (Accessories)
+  [submenu] (Development) </usr/share/icons/mate-colors-common/16x16/categories/applications-development.png>
+    [exec] (CMake) {cmake-gui } </usr/share/pixmaps/CMakeSetup32.png>
+    [exec] (Data Display Debugger) {ddd} </usr/share/pixmaps/ddd.png>
+    [exec] (Glade) {glade-3 } </usr/share/icons/hicolor/16x16/apps/glade-3.png>
+    [exec] (Qt4 Assistant) {assistant} </usr/share/icons/hicolor/32x32/apps/assistant.png>
+    [exec] (Qt4 Designer) {designer} </usr/share/icons/hicolor/128x128/apps/designer.png>
+    [exec] (Qt4 Linguist) {linguist} </usr/share/icons/hicolor/16x16/apps/linguist.png>
+    [exec] (distcc monitor) {distccmon-gnome}
+  [end] # (Development)
+  [submenu] (Games) </usr/share/icons/mate-colors-common/16x16/categories/applications-games.png>
+    [exec] (XaoS) {xaos} </usr/share/pixmaps/xaos.png>
+    [exec] (Xboard) {xboard} </usr/share/icons/hicolor/48x48/apps/xboard.png>
+    [exec] (eboard) {eboard} </usr/share/pixmaps/chess.png>
+  [end] # (Games)
+  [submenu] (Graphics) </usr/share/icons/mate/16x16/categories/applications-graphics.png>
+    [exec] (GNU Image Manipulation Program) {gimp-2.8 } </usr/share/icons/hicolor/16x16/apps/gimp.png>
+    [exec] (Geeqie) {geeqie -r } </usr/share/pixmaps/geeqie.png>
+    [exec] (X PDF) {xpdf} </usr/share/pixmaps/xpdfIcon.xpm>
+    [exec] (XSane - Scanning) {xsane} </usr/share/icons/mate-colors-common/16x16/apps/xsane.png>
+  [end] # (Graphics)
+  [submenu] (Multimedia) </usr/share/icons/mate-colors-common/16x16/categories/applications-multimedia.png>
+    [exec] (Audacious) {audacious } </usr/share/icons/hicolor/48x48/apps/audacious.png>
+    [exec] (MPlayer) {gmplayer } </usr/share/icons/mate-colors-common/16x16/apps/mplayer.png>
+    [exec] (Mixer) {xfce4-mixer} </usr/share/icons/mate/16x16/apps/multimedia-volume-control.png>
+    [exec] (QT V4L2 test Utility) {qv4l2} </usr/share/icons/hicolor/16x16/apps/qv4l2.png>
+    [exec] (XMMS) {xmms } </usr/share/pixmaps/xmms.png>
+    [exec] (Xine) {xine} </usr/share/icons/mate-colors-common/16x16/apps/xine.png>
+  [end] # (Multimedia)
+  [submenu] (Network) </usr/share/icons/mate-colors-common/16x16/categories/applications-internet.png>
+    [exec] (Firefox) {firefox } </usr/share/icons/hicolor/16x16/apps/firefox.png>
+    [exec] (Pan Newsreader) {pan} </usr/share/icons/mate-colors-common/16x16/apps/pan.png>
+    [exec] (Pidgin Internet Messenger) {pidgin} </usr/share/icons/mate-colors-common/16x16/apps/pidgin.png>
+    [exec] (SeaMonkey) {/usr/bin/seamonkey} </usr/share/pixmaps/seamonkey-icon.png>
+    [exec] (SeaMonkey Mail) {/usr/bin/seamonkey -mail} </usr/share/pixmaps/seamonkey-mail-icon.png>
+    [exec] (Thunderbird) {thunderbird} </usr/share/pixmaps/thunderbird.png>
+    [exec] (Wicd Network Manager) {wicd-gtk --no-tray} </usr/share/icons/hicolor/16x16/apps/wicd-gtk.png>
+    [exec] (XChat IRC) {xchat} </usr/share/icons/mate-colors-common/16x16/apps/xchat.png>
+    [exec] (Zenmap) {zenmap } </usr/share/zenmap/pixmaps/zenmap.png>
+    [exec] (Zenmap (as root\)) {/usr/share/zenmap/su-to-zenmap.sh } </usr/share/zenmap/pixmaps/zenmap.png>
+    [exec] (gFTP) {gftp } </usr/share/icons/mate-colors-common/16x16/apps/gftp.png>
+    [exec] (wpa_gui) {kdesu wpa_gui} </usr/share/pixmaps/wpa_gui.png>
+  [end] # (Network)
+  [submenu] (Office) </usr/share/icons/mate-colors-common/16x16/categories/applications-office.png>
+    [exec] (Orage Calendar) {orage} </usr/share/icons/hicolor/48x48/apps/xfcalendar.png>
+    [exec] (Orage Globaltime) {globaltime} </usr/share/icons/hicolor/48x48/apps/orage_globaltime.png>
+    [exec] (Txt2tags) {txt2tags --gui} </usr/share/pixmaps/txt2tags.png>
+  [end] # (Office)
+  [submenu] (Other) </usr/share/icons/mate/16x16/categories/applications-other.png>
+    [exec] (Vi IMproved) {gvim -f } </usr/share/icons/mate-colors-common/16x16/apps/gvim.png>
+  [end] # (Other)
+  [submenu] (Settings) </usr/share/icons/mate-colors-common/16x16/categories/preferences-desktop.png>
+    [exec] (Bluetooth Manager) {blueman-manager} </usr/share/icons/hicolor/16x16/apps/blueman.png>
+    [exec] (Desktop Preferences) {pcmanfm --desktop-pref} </usr/share/icons/mate-brave/16x16/places/user-desktop.png>
+    [exec] (File Manager) {thunar-settings} </usr/share/icons/mate-brave/16x16/apps/system-file-manager.png>
+    [exec] (Monitor Settings) {lxrandr} </usr/share/icons/mate-brave/16x16/devices/video-display.png>
+    [exec] (Network Connections) {nm-connection-editor} </usr/share/icons/mate-brave/16x16/categories/preferences-system-network.png>
+    [exec] (Preferred Applications) {libfm-pref-apps} </usr/share/icons/mate-colors-common/16x16/categories/preferences-desktop.png>
+    [exec] (Qt4 Config) {qtconfig}
+    [exec] (Removable Drives and Media) {thunar-volman-settings} </usr/share/icons/mate-colors-common/16x16/devices/drive-removable-media.png>
+    [exec] (SCIM Input Method Setup) {scim-setup} </usr/share/pixmaps/scim-setup.png>
+    [exec] (Screensaver) {xscreensaver-demo} </usr/share/icons/mate-colors-common/16x16/apps/xscreensaver.png>
+  [end] # (Settings)
+  [submenu] (System) </usr/share/icons/mate-colors-common/16x16/categories/applications-system.png>
+    [exec] (ALSA sound card) {gksu gtkalsasetup} </usr/share/icons/hicolor/16x16/apps/gtkalsasetup.png>
+    [exec] (Bulk Rename) {/usr/lib/Thunar/ThunarBulkRename } </usr/share/icons/mate-brave/16x16/apps/Thunar.png>
+    [exec] (File Manager PCManFM) {pcmanfm } </usr/share/icons/mate-brave/16x16/apps/system-file-manager.png>
+    [exec] (Hostnames) {gksu gtkhostsetup} </usr/share/icons/hicolor/16x16/apps/gtkhostsetup.png>
+    [exec] (Htop) {urxvt -e htop} </usr/share/icons/mate-colors-common/16x16/apps/htop.png>
+    [exec] (Keyboard) {gksu gtkkeyboardsetup} </usr/share/icons/hicolor/16x16/apps/gtkkeyboardsetup.png>
+    [exec] (LXTerminal) {lxterminal} </usr/share/icons/hicolor/128x128/apps/lxterminal.png>
+    [exec] (Manage Printing) {/usr/bin/xdg-open http://localhost:631/} </usr/share/icons/mate-colors-common/16x16/devices/cups.png>
+    [exec] (Print Settings) {system-config-printer} </usr/share/icons/mate-colors-common/16x16/devices/printer.png>
+    [exec] (System clock) {gksu gtkclocksetup} </usr/share/icons/hicolor/16x16/apps/gtkclocksetup.png>
+    [exec] (System language) {gksu gtklocalesetup} </usr/share/icons/hicolor/16x16/apps/gtklocalesetup.png>
+    [exec] (System services) {gksu gtkservicesetup} </usr/share/icons/hicolor/16x16/apps/gtkservicesetup.png>
+    [exec] (Task Manager) {xfce4-taskmanager} </usr/share/icons/mate-colors-common/16x16/apps/utilities-system-monitor.png>
+    [exec] (Thunar File Manager) {thunar } </usr/share/icons/mate-brave/16x16/apps/Thunar.png>
+    [exec] (UXTerm) {uxterm} </usr/share/pixmaps/xterm-color_48x48.xpm>
+    [exec] (Users and groups) {gksu gtkusersetup} </usr/share/icons/hicolor/16x16/apps/gtkusersetup.png>
+    [exec] (XTerm) {xterm} </usr/share/pixmaps/xterm-color_48x48.xpm>
+    [exec] (Xfce Terminal) {xfce4-terminal} </usr/share/icons/mate-colors-common/16x16/apps/utilities-terminal.png>
+    [exec] (dconf Editor) {dconf-editor} </usr/share/icons/mate/16x16/apps/dconf-editor.png>
+  [end] # (System)
+[end] # (Applications)
