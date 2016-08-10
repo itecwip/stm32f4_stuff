@@ -1,0 +1,7 @@
+
+Disk /dev/block/mmcblk1: 8010 MB, 8010072064 bytes
+214 heads, 8 sectors/track, 9138 cylinders
+Units = cylinders of 1712 * 512 = 876544 bytes
+
+              Device Boot      Start         End      Blocks  Id System
+/dev/block/mmcblk1p1               5        9139     7818240   b Win95 FAT32

@@ -1,0 +1,58 @@
+-rw-r--r-- root     root          100 1970-01-01 01:00 FWUpgradeInit.rc
+drwxr-xr-x root     root              2016-08-10 22:29 acct
+drwxrwx--- system   cache             2016-08-10 20:45 cache
+dr-x------ root     root              2016-08-10 22:29 config
+drwxr-xr-x root     root              2016-08-10 22:29 custom
+lrwxrwxrwx root     root              2016-08-10 22:29 d -> /sys/kernel/debug
+drwxrwx--x system   system            2016-08-10 22:30 data
+-rw-r--r-- root     root          233 1970-01-01 01:00 default.prop
+drwxr-xr-x root     root              2016-08-10 22:30 dev
+lrwxrwxrwx root     root              1970-01-01 01:00 emmc@android -> /dev/block/mmcblk0p5
+lrwxrwxrwx root     root              1970-01-01 01:00 emmc@cache -> /dev/block/mmcblk0p6
+-rw-r--r-- root     root            0 2016-08-10 22:29 emmc@custom
+lrwxrwxrwx root     root              1970-01-01 01:00 emmc@ebr1 -> /dev/block/mmcblk0p1
+lrwxrwxrwx root     root              1970-01-01 01:00 emmc@protect_f -> /dev/block/mmcblk0p2
+lrwxrwxrwx root     root              1970-01-01 01:00 emmc@protect_s -> /dev/block/mmcblk0p3
+lrwxrwxrwx root     root              1970-01-01 01:00 emmc@sec_ro -> /dev/block/mmcblk0p4
+lrwxrwxrwx root     root              1970-01-01 01:00 emmc@usrdata -> /dev/block/mmcblk0p7
+-rw-r--r-- root     root          135 1970-01-01 01:00 enableswap.sh
+lrwxrwxrwx root     root              2016-08-10 22:29 etc -> /system/etc
+-rw-r--r-- root     root            0 1970-01-01 01:00 factory_init.project.rc
+-rw-r--r-- root     root        16943 1970-01-01 01:00 factory_init.rc
+-rw-r--r-- root     root        27404 1970-01-01 01:00 file_contexts
+-rw-r--r-- root     root          929 1970-01-01 01:00 fstab
+-rw-r----- root     root          929 1970-01-01 01:00 fstab.fat.nand
+-rw-r----- root     root          929 1970-01-01 01:00 fstab.nand
+-rwxr-x--- root     root       220876 1970-01-01 01:00 init
+-rwxr-x--- root     root          411 1970-01-01 01:00 init.aee.customer.rc
+-rwxr-x--- root     root        24381 1970-01-01 01:00 init.charging.rc
+-rwxr-x--- root     root         1154 1970-01-01 01:00 init.environ.rc
+-rwxr-x--- root     root            0 1970-01-01 01:00 init.modem.rc
+-rwxr-x--- root     root         3228 1970-01-01 01:00 init.project.rc
+-rwxr-x--- root     root         1487 1970-01-01 01:00 init.protect.rc
+-rwxr-x--- root     root        56016 1970-01-01 01:00 init.rc
+-rwxr-x--- root     root         1874 1970-01-01 01:00 init.ssd.rc
+-rwxr-x--- root     root         2126 1970-01-01 01:00 init.trace.rc
+-rwxr-x--- root     root        22974 1970-01-01 01:00 init.usb.rc
+-rwxr-x--- root     root          583 1970-01-01 01:00 init.xlog.rc
+-rw-r--r-- root     root            0 1970-01-01 01:00 meta_init.modem.rc
+-rw-r--r-- root     root         1761 1970-01-01 01:00 meta_init.project.rc
+-rw-r--r-- root     root        11839 1970-01-01 01:00 meta_init.rc
+drwxrwxr-x root     system            2016-08-10 22:29 mnt
+drwxrwx--x system   system            2016-08-10 22:29 persist
+dr-xr-xr-x root     root              1970-01-01 01:00 proc
+-rw-r--r-- root     root         2195 1970-01-01 01:00 property_contexts
+drwxrwx--x system   system            1970-01-01 01:00 protect_f
+drwxrwx--x system   system            1970-01-01 01:00 protect_s
+drwx------ root     root              2015-08-11 10:52 root
+drwxr-x--- nvram    system            1970-01-01 01:00 sbchk
+drwxr-x--- root     root              1970-01-01 01:00 sbin
+lrwxrwxrwx root     root              2016-08-10 22:29 sdcard -> /storage/emulated/legacy
+-rw-r--r-- root     root          663 1970-01-01 01:00 seapp_contexts
+-rw-r--r-- root     root       235757 1970-01-01 01:00 sepolicy
+drwxr-x--x root     sdcard_r          2016-08-10 22:29 storage
+dr-xr-xr-x root     root              2016-08-10 22:29 sys
+drwxr-xr-x root     root              2016-07-31 21:42 system
+drwxr-xr-x root     root              2016-08-10 22:29 tmp-mksh
+-rw-r--r-- root     root         6876 1970-01-01 01:00 ueventd.rc
+lrwxrwxrwx root     root              2016-08-10 22:29 vendor -> /system/vendor

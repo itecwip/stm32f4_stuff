@@ -1,0 +1,17 @@
+Warning: ignoring extra data in partition table 5
+Warning: ignoring extra data in partition table 5
+
+Disk /dev/block/mmcblk0: 7796 MB, 7796162560 bytes
+1 heads, 16 sectors/track, 951680 cylinders
+Units = cylinders of 16 * 512 = 8192 bytes
+
+              Device Boot      Start         End      Blocks  Id System
+/dev/block/mmcblk0p1              65          64  2147483647+  5 Extended
+Partition 1 does not end on cylinder boundary
+/dev/block/mmcblk0p2            1153        2432       10240  83 Linux
+Partition 2 does not end on cylinder boundary
+/dev/block/mmcblk0p3            2433        3712       10240  83 Linux
+Partition 3 does not end on cylinder boundary
+/dev/block/mmcblk0p4            7873        8640        6144  83 Linux
+Partition 4 does not end on cylinder boundary
+/dev/block/mmcblk0p5           11905      208512     1572864  83 Linux

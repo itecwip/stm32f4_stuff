@@ -1,0 +1,23 @@
+brw------- root     root       7,   0 2016-08-10 22:29 loop0
+brw------- root     root       7,   1 2016-08-10 22:29 loop1
+brw------- root     root       7,   2 2016-08-10 22:29 loop2
+brw------- root     root       7,   3 2016-08-10 22:29 loop3
+brw------- root     root       7,   4 2016-08-10 22:29 loop4
+brw------- root     root       7,   5 2016-08-10 22:29 loop5
+brw------- root     root       7,   6 2016-08-10 22:29 loop6
+brw------- root     root       7,   7 2016-08-10 22:29 loop7
+brw-rw---- root     system   179,   0 2016-08-10 22:29 mmcblk0
+brw-rw---- root     system   179,  32 2016-08-10 22:29 mmcblk0boot0
+brw------- root     root     179,  64 2016-08-10 22:29 mmcblk0boot1
+brw------- root     root     179,   1 2016-08-10 22:29 mmcblk0p1
+brw------- root     root     179,   2 2016-08-10 22:29 mmcblk0p2
+brw------- root     root     179,   3 2016-08-10 22:29 mmcblk0p3
+brw------- root     root     179,   4 2016-08-10 22:29 mmcblk0p4
+brw------- root     root     179,   5 2016-08-10 22:29 mmcblk0p5
+brw------- root     root     179,   6 2016-08-10 22:29 mmcblk0p6
+brw------- root     root     179,   7 2016-08-10 22:29 mmcblk0p7
+brw------- root     root     179,  96 2016-08-10 22:29 mmcblk1
+brw------- root     root     179,  97 2016-08-10 22:29 mmcblk1p1
+drwxr-xr-x root     root              2016-08-10 22:29 platform
+drwx------ root     root              2016-08-10 22:29 vold
+brw------- root     root     253,   0 2016-08-10 22:29 zram0
